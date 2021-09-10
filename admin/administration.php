@@ -1,5 +1,6 @@
 <?php
-    require "connexion.php";
+    session_start();
+    include("connexion.php");
     if(isset($_POST['admin']))
     {
         if($_POST['admin']!=="" OR $_POST['password']!=="")
@@ -60,14 +61,21 @@ if(isset($_GET['delvid']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../images/Illu/logo_final.png"/>
+    <link rel="icon" href="../images/Illu/Logo Spiteful Final.png.png"/>
     <link rel="stylesheet" type="text/css" href="styleadmin.css"/>
+    <link rel="stylesheet" type="text/css" href="../styleIPHONEX.css"/>
+
+    <script type="../JS/animation.js"></script>
+
     <title>Administration Spiteful</title>
+    
+    
 </head>
 <body>
     <nav>
         <div id="connexion">
             <h1>CONNECTES-TOI</h1>
+            
             <div id="bloco">
                 <?php
                 
@@ -86,12 +94,32 @@ if(isset($_GET['delvid']))
                     <label class="textform" for="password">Mot de passe:<input type="password" id="Mdp" name="password"></label>
                     <input id="boutco" type="submit" value="Connexion">
                 </form>';
+
+                    if(isset($_GET['error']))
+                    {
+                        switch($_GET['error'])
+                        {
+                            case 1:
+                                echo'Veuillez vous identifier, Merci';
+                                break;
+                            case 2:
+                                echo'';
+                                break;
+                            case 3:
+                                echo'';
+                                break;
+                            default:
+                        }
+                    }
                 }
+                
                 ?>
+                
             </div>
+ 
         </div>
+
         <div id="retour"><a href="../index.php">Retour Spiteful</a></div>
-           
     </nav>
 
     <?php
@@ -105,6 +133,7 @@ if(isset($_GET['delvid']))
                 
                 echo'<div class="bloctext">';
                     echo'<div id="PHOTOS">';
+                        echo'<div class="ajouter"><a href="ajouter.php">AJOUTER</a></div>';
                         
                             $reqimg=$bdd->query("SELECT * FROM photos");
                             while($donimg=$reqimg->fetch())
@@ -114,6 +143,7 @@ if(isset($_GET['delvid']))
                                     <div class="slide"><b>'.$donimg['slidepho'].'</b></div>
                                     <div class="nom">'.$donimg['nompho'].'</div>
                                     <div class="photo"><img src="../images/'.$donimg['dossier'].'/'.$donimg['image'].'" alt="Mamba vert"></div>
+                                    <div class="modifier"><a href="mod.php?id='.$donimg["id"].'">MODIFIER</a></div>
                                     <div class="supprimer"><a href="administration.php?id='.$donimg["id"].'&delimg=ok">SUPPRIMER</a></div>
                                 </div>
     
@@ -127,6 +157,7 @@ if(isset($_GET['delvid']))
             echo'<div id="blocvid">';
                 echo'<div class="bloctext">';
                     echo'<div id="VIDEOS">';
+                        echo'<div class="ajouter"><a href="ajouter.php">AJOUTER</a></div>';
 
                         $reqvid=$bdd->query("SELECT * FROM videos");
                         while($donvid=$reqvid->fetch())
@@ -136,6 +167,7 @@ if(isset($_GET['delvid']))
                                 <div class="slide"><b>'.$donvid["slidevid"].'</b></div>
                                 <div class="nom">'.$donvid["nomvid"].'</div>
                                 <div class="video"><video src="../vidéos/'.$donvid['dossier'].'/'.$donvid['video'].'" poster="../images/JPEG/PS.jpg"></video></div>
+                                <div class="modifier" ><a href="modifier.php?id='.$donvid["id"].'">MODIFIER</a></div>
                                 <div class="supprimer"><a href="administration.php?id='.$donvid["id"].'&delvid=ok">SUPPRIMER</a></div>
                             </div>';
                         }
@@ -150,5 +182,7 @@ if(isset($_GET['delvid']))
             echo'</div>';
         }
     ?>
+
 </body>
+
 </html>

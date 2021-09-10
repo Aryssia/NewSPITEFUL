@@ -65,7 +65,7 @@ nav{
 #connexion{
     width:80vw;
     display:flex;
-    margin-top:1vh;
+    margin-top:2vh;
     margin-left:5vw;
 }
 #connexion h1{
@@ -135,6 +135,21 @@ nav{
     color:var(--n);
     transition:all 0.25s ease-in-out;
 }
+#retour{
+    height:4vh;
+    width:7vw;;
+    margin-top:3vh;
+    line-height:200%;
+}
+#retour a{
+    color:var(--n);
+    text-decoration: none;
+    transition:ease-in-out .5s;
+    font-family:"theboldfont";
+}
+#retour a:hover{
+    color:var(--o);
+}
 /******************************BlocAdmin**************/
 .bloctext{
     position:var(--pr);
@@ -155,7 +170,7 @@ nav{
     background-size:contain;
     background-repeat: no-repeat;
     margin-top:25vh;
-    margin-left:-10vw;
+    margin-left:0vw;
 }
 #titreP{
     width:23vw;
@@ -214,14 +229,15 @@ h2{
     margin-left:5vw;
 }
 #meduse{
-    width:70vw;
-    height:70vh;
+    width:100vw;
+    height:100vh;
     background-image:url(../images/PNG/Chironex_Fleckeri.png);
     background-size:contain;
     background-repeat: no-repeat;
-    margin-top:25vh;
     transform:rotate(-45deg);
     position:var(--pr);
+    margin-top:-20vh;
+    margin-left:-10vw;
 }
 .videos{
     width:60vw;
@@ -239,24 +255,59 @@ h2{
     width:23vw;
     height:15vh;
     transform:rotate(-90deg);
-    margin-top:-80vh;
-    margin-left:35vw;
+    margin-top:-50vh;
+    margin-left:15vw;
 }
-#retour{
-    height:4vh;
-    width:7vw;;
-    margin-top:1vh;
-    line-height:200%;
+/*********************LIENS******************/
+.ajouter a, .modifier a, .supprimer a{
+    text-decoration:none;
 }
-#retour a{
+.modifier, .supprimer{
+    z-index:1000;
+}
+.modifier a{
+    font-family:'theboldfont';
+    font-size:16px;
     color:var(--n);
-    text-decoration: none;
-    transition:ease-in-out .5s;
-    font-family:"theboldfont";
+    cursor:pointer;
+    margin-left:2vw;
+    margin-top:2vh;
 }
-#retour a:hover{
+.supprimer a{
+    font-family:'theboldfont';
+    font-size:16px;
+    color:var(--m);
+    cursor:pointer;
+    margin-top:2vh;
+    margin-left:2vw;
+}
+.ajouter a{
+    font-family:'theboldfont';
+    font-size:24px;
+    color:var(--n);
+    cursor:pointer;
+}
+.modifier a:hover, .ajouter a:hover{
+    transition:all 0.25s ease-in-out;
     color:var(--o);
 }
+.supprimer a:hover{
+    transition:all 0.25s ease-in-out;
+    color:var(--n);
+}
+/***************MESSAGE ERROR******************/
+.messerror{
+    width:50vw;
+    height:50vh;
+    background-color:var(--m);
+    border-radius:50%;
+    text-align: center;
+    line-height:50%;
+    color:white;
+}
+
+
+
 /************************MEDIA QUERIES*********************/
 @media all AND (max-width:1024px)/***IPAD HOR***/
 {

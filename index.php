@@ -340,24 +340,6 @@
 
             })
         })
-
-
-        const puceimg = document.querySelectorAll('pucesimg')
-        const video1 = document.querySelector('.vids')
-
-        video1.classList.add('vid-open')
-
-        puceimg.forEach(pucesimg =>{
-            puceiimg.addEventListener('click', ()=>{
-                const target = document.querySelector(pucesimg.dataset.target)
-                const videos = document.querySelectorAll('.vids')
-                videos.forEach(Video =>{
-                    video.classList.remove('vid-open')
-                })
-                target.classList.add('vid-open')
-                
-            })
-        })
         
 
         var scrolling

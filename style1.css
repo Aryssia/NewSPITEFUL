@@ -1017,4 +1017,25 @@ footer p a:hover{
         margin-left:0;
         margin-top:-3vh;
     }
+    .title{
+        font-size:40px;
+    }
+    .blocinfo{
+        margin-left:0;
+        height:10vh;
+        width:100%;
+        background-color: var(--n);
+    }
+    #num{
+        width:40vw;
+        margin-left:-8vw;
+    }
+    #pm{
+        width:60vw;
+        height:20vh;
+        margin-left:-10vw;
+    }
+    .pouc,.maladie{
+        font-size:45px;
+    }
 }
