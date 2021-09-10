@@ -1,0 +1,838 @@
+:root{
+    --h:100%;
+    --w:100%;
+    --pr:relative;
+    --pa:absolute;
+    --fs:18px;
+    --n:#2D2A2A;
+    --o:#EC6608;
+    --m:#BF034D;
+    --v:#62d600;
+    --b:#92eaff;
+    --r:#ff35c5;
+    --j:#ffeb00;
+    --bl:#ffffff;
+}
+
+@font-face{
+    font-family: "theboldfont";
+    src:url(typo/the_bold_font/theboldfont.ttf);
+}
+@font-face{
+    font-family: "Cabrion - Light";
+    src:url(typo/cabrion/Cabrion\ -\ Light.otf);
+}
+@font-face{
+    font-family: "Simple Print";
+    src:url(typo/simple_print/Simple\ Print.ttf);
+}
+@font-face{
+    font-family: "Hasteristico";
+    src:url(typo/hasteristico/Hasteristico.ttf);
+}
+@font-face{
+    font-family: "HasteristicoBOLD";
+    src:url(typo/hasteristico/HasteristicoBOLD.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    scroll-behavior: smooth;
+    background-color: var(--bl);
+}
+.slide{
+    width: 100%;
+    min-height: 100vh;
+    position: var(--pr);
+    overflow:hidden;
+}
+
+/**NAV**/
+nav{
+    width: 100%;
+    min-height: 8vh;
+    background-color: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: all 0.5s;
+}
+.nav-scroll{
+    background-color: transparent;
+}
+.nav-scroll .bar{
+    background-color:var(--m);
+}
+.nav-scroll #MODE{
+    color:var(--m);
+}
+.nav-scroll #MODE a{
+    color:var(--m);
+}
+.nav-open{
+    background-color: transparent;
+}
+#logomenu{
+    width: 20%;
+    height: 80px;
+    margin-left: 15px;
+    padding-top: 5px;
+}
+#logomenu img{
+    height: 100%;
+}
+nav ul{
+    width: 20%;
+    display: flex;
+    list-style: none;
+}
+nav ul li{
+    flex: 1;
+    display: flex;
+}
+
+/***BURGETBOUT***/
+.burgerbout{
+    margin: auto;
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}
+.bar{
+    width: 100%;
+    height: 5px;
+    background-color:var(--n);
+    margin-top: 5px;
+    transition: all 0.5s;
+}
+.bar:nth-child(1)
+{
+    transform: translateX(10px);
+}
+.bar:nth-child(2)
+{
+    transform: translateX(5px);
+}
+.burger-open .bar:nth-child(1){
+  transform: translate(0px, 15px) rotate(-25deg);
+}
+.burger-open .bar:nth-child(2){
+    opacity: 0 !important;;
+}
+.burger-open .bar:nth-child(3){
+    transform: translate(0px, -5px) rotate(25deg);
+}
+
+/***MODE***/
+#MODE{
+    color:var(--n);
+    margin: auto;
+    font-family: "HasteristicoBOLD";
+    font-size:20px;
+    letter-spacing: .1vw;
+}
+#MODE a{
+    color:var(--n);
+    text-decoration: none;
+    transition: ease-in-out .5s;
+}
+#MODE a:hover{
+    color:var(--o);
+}
+/***MENU***/
+.menu{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 99;
+    background-color: white;
+    background-image: url(images/Illu/Logo\ Spiteful\ Final\ R.png.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.5s;
+}
+.open{
+    left: 0%;
+}
+.container-menu{
+    margin: auto;
+    width: 30%;
+    font-family: "Hasteristico";
+    text-align: center;
+    letter-spacing: .1vw;
+}
+#options div{
+    margin: 30px 0;
+    text-align: center;
+}
+#options div a {
+    color:var(--n);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    transition:ease-in-out .5s;
+}
+#options div a:hover {
+    color:var(--o);
+}
+
+/************* HOME ***********/
+.video-fond{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.video-fond video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/***PRES***/
+#pres .wrapper{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    margin: 0 auto;
+}
+#textpres, #imgpres{
+    width:50%;
+    height:100vh;
+}
+.textpres{
+    width:96%;
+    height:30vh;
+    text-align: justify;
+    margin-top:40vh;
+    margin-left:2%;
+}
+.textpres p{
+    font-size:24px;
+    font-family: 'Cabrion - Light';
+}
+.PC{
+    color:var(--o);
+}
+.imgpres h1{
+    font-family: 'theboldfont';
+    font-size:300px;
+    color:var(--m);
+    opacity:45%;
+    margin-left:8vw;
+    margin-top:-32vh;
+    letter-spacing: .1vw;
+}
+.imgpres img{
+    width: 90%;
+    height:90%;
+    margin-top:2vh;
+    margin-left:6vw;
+    z-index:10000;
+}
+/***HISTORY***/
+#history .wrapper{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#sci{
+    width: 45%;
+    height: 100vh;
+    display:flex;
+    overflow:hidden;
+}
+.sci{
+    width:60%;
+    height:70%;
+    margin-top:20vh;
+}
+.scipho img{
+    width:87%;
+    height:85%;
+    object-fit: scale-down;
+    z-index:100000;
+}
+.scipho p{
+    width:70%;
+    letter-spacing: .1vw;
+}
+.scipho .p1{
+    font-family: 'HasteristicoBOLD';
+    font-size:24px;
+    color:var(--n);
+}
+.scipho .p11{
+    font-family: 'Hasteristico';
+    font-size:20px;
+    color:var(--n);
+}
+.sci h1{
+    width:10%;
+    height:6%;
+    transform: rotate(-90deg);
+    font-family:'theboldfont';
+    font-size:70px;
+    color:var(--n);
+    opacity:80%;
+    margin-top:-35vh;
+    margin-left:19vw;
+}
+.textsci{
+    width:40%;
+    height:70%;
+    margin-top:20vh;
+}
+#texts{
+    width:94%;
+    height:53%;
+    margin-top:35vh;
+    background-color:var(--m);
+    margin-left:3%;
+}
+.texts{
+    width:90%;
+    height:40%;
+    margin:5%;
+    text-align:justify;
+    padding-top:12vh;
+}
+.texts p{
+    color:var(--bl);
+    font-family:"Cabrion - Light";
+    font-size:20px;
+}
+#texthist{
+    width: 55%;
+    height: 100vh;
+    text-align:justify;
+    position: relative;
+    overflow-x: hidden;
+    text-align:justify;
+}
+.texthist{
+    width:80%;
+    height:20%;
+    font-family: 'Cabrion - Light';
+    font-size:24px;
+    margin-top:40vh;
+    margin-left:6vw;
+}
+.barsci{
+    margin-top:22vh;
+    margin-left:-28vw;
+    width:43.9vw;
+    height:0.3vh;
+    background:var(--m);
+}
+/************** MEDOC *************/
+#medoc .wrapper{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list{
+    width: 30%;
+    height: 100vh;
+}
+
+.medoc-container{
+    width: 70%;
+    height: 100vh;
+    text-align: right;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#puces{
+    margin-left: 7.5vw;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.puce{
+    width: 20px;
+    height: 20px;
+    background-color:var(--m);
+    opacity:50%;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:.3s ease-in-out;
+}
+.puce:hover{
+    background-color:var(--bl);
+    opacity:80%;
+}
+.medocs{
+    width: 100%;
+    min-height: 80%;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.medocs .img{
+    width: 500px;
+    height: 500px;
+    margin-top: 10vh;
+    margin-left:40vw;
+}
+.medocs .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+.medoc-open{
+    left: 0;
+    opacity: 1;
+}
+#medoc-info{
+    text-align:center;
+    width: 100%;
+    height: 60%;
+    position: relative;
+}
+.med-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: var(--n);
+}
+.med-open{
+    z-index: 3;
+}
+.title{
+    font-family:"theboldfont";
+    font-size:70px;
+    color:var(--bl);
+    padding-top:16vh;
+    letter-spacing:.1vw;
+}
+.blocinfo{
+    width:100%;
+    height:20%;
+    display:flex;
+}
+#num{
+    width:5vw;
+    height:5vh;
+    text-align:center;
+    transform:rotate(-90deg);
+    margin-top:5.5vh;
+}
+.num{
+    color:var(--m);
+    font-family:"HasteristicoBOLD";
+    font-size:40px;
+    letter-spacing: .1vw;
+}
+#pm{
+    width:20vw;
+    height:10vh;
+    margin-top:3vh;
+    line-height: 200%;
+}
+.pouc{
+    padding-top:2vh;
+}
+.pouc, .maladie{
+    color:var(--bl);
+    font-family:"Simple Print";
+    font-size:34px;
+}
+.nom{
+    font-size:150px;
+    font-family:"theboldfont";
+    color:var(--n);
+    opacity:.85;
+    margin-top:-12vh;
+}
+/***VIDEOS***/
+#video p, #contact p{
+    font-size: 100px;
+    font-family:'theboldfont';
+    color:var(--m);
+}
+#video .constr, #contact .constr{
+    margin-top:35vh;
+    margin-left:20vw;
+}
+/*********** CONTACT ***********/
+#contact{
+    padding-top: 100px;
+}
+#FORM{
+    opacity: 0;
+}
+.flash-success{
+    color: green;
+}
+
+.flash-error{
+    color: red;
+}
+
+/**FOOTER**/
+
+footer{
+    width:var(--w);
+    height:3vh;
+    text-align:center;
+    overflow:hidden;
+}
+footer p{
+    font-family: 'Cabrion - Light';
+    font-size:14px;
+    color:var(--n);
+    margin-bottom:-1.5vh;
+    margin-left:2vw;
+}
+footer p a{
+    color:var(--n);
+    text-decoration: none;
+}
+footer p a:hover{
+    color:var(--o);
+    transition: all 0.25s ease-in-out;
+}
+
+/***MEDIA QUERIES***/
+
+/******IPAD VER******/
+@media all and (max-width: 768px)
+{
+
+    .slide{
+        min-height:40vh;
+    }
+    /***ACCUEIL***/
+    nav{
+        padding-bottom: 5px;
+        background-color: var(--bl);
+        opacity: .85;
+    }
+    nav ul{
+        width:50vw;
+    }
+    .nav-scroll .bar{
+        background-color:var(--n);
+    }
+    .nav-scroll #MODE{
+        color:var(--n);
+    }
+    .nav-scroll #MODE a{
+        color:var(--n);
+    }
+    .nav-scroll{
+        background-color: var(--bl);
+    }
+    .burgerbout{
+        margin: 20px auto;
+    }
+    #MODE{
+        text-align: center;
+        font-size:14px;
+    }
+    .tiret{
+        display: block;
+    }
+    .video-fond{
+        height:40vh;
+    }
+    /******SPIEFUL*****/
+    #textpres{
+        width:60%;
+        height:60vh;
+    }
+    #imgpres{
+        width:40%;
+        height:60vh;
+    }
+    .textpres{
+        width:96%;
+        height:35vh;
+        margin-top:14vh;
+        margin-left:2%;
+        text-align: left;
+    }
+    .textpres p{
+        font-size:20px;
+    }
+    .imgpres h1{
+        font-size:150px;
+        transform: rotate(-90deg);
+        margin-left:38vw;
+        margin-top:0vh;
+    }
+    .imgpres img{
+        width:100%;
+        margin-left:0;
+        margin-top:12vh;
+    }
+
+    /****HISTORY***/
+    #history .wrapper{
+        flex-direction: column;
+    }
+    .texts {
+        text-align: left;
+    }
+    #sci{
+        width:100%;
+        height:60vh;
+    }
+    #texthist{
+        width: 100%;
+        height:20vh;
+    }
+    .sci{
+        height:68%;
+        margin-top: 7vh;
+    }
+    .sci h1{
+        margin-top:-30vh;
+        margin-left:32vw;
+        font-size:55px;
+    }
+    .sci{
+        margin-top:12vh;
+    }
+    .scipho img{
+        width:65%;
+        height:65%;
+    }
+    .texts{
+        padding-top:8vh;
+    }
+    .textsci{
+        margin-top:0;
+    }
+    #texts{
+        width:94%;
+        height:80%;
+        margin-top:26vh;
+    }
+    .texthist{
+        font-size:20px;
+        margin-top:6vh;
+    }
+    .barsci{
+        margin-top:20vh;
+        margin-left:-60vw;
+        width:95.5vw;
+        background-color: var(--m);
+    }
+    /****MEDOCS*****/
+    #medoc .wrapper{
+        flex-direction: column;
+    }
+
+    .list{
+        width: 100%;
+        height: 40vh; 
+    }
+    .med-info{
+        width: 100%;
+        height: 35vh;
+
+    }
+    .blocinfo{
+        width:55%;
+        height:30%;
+        margin-left:20vw;
+        margin-top:2vh;
+    }
+    .title{
+        padding-top: 10vh;
+    }
+    #num{
+        width:15vw;
+        margin:5vw;
+    }
+    #pm{
+        margin-top:1vh;
+    }
+    .medoc-container{
+        width: 96%;
+        height:50vh;
+        overflow: hidden;
+        margin-left:4%;
+        margin-top:-5vh;
+    }
+    #puces{
+        width:30%;
+        margin-top:22vh;
+        margin-left:-12.5vw;
+        transform: rotate(90deg);
+        z-index:1000000000000000000000000;
+    }
+    .medocs{
+        height:50vh;
+    }
+    .medocs .img{
+        margin:0;
+        margin-left:15vw;
+        margin-top:1.5vh;
+    }
+    .nom{
+        display:none;
+    }
+
+}
+/******IPAD HOR******/
+@media all AND (max-width: 1024px){
+
+}
+/****IPHONE 6/7/8 *****/
+@media all AND (max-width: 375px){
+    .slide{
+        min-height:35vh;
+    }
+    /***ACCUEIL***/
+    #logomenu{
+        width:10%;
+        height:60px;
+    }
+    .burgerbout{
+        width:28px;
+        height:28px;
+    }
+    #options div a{
+        font-size: 20px;
+    }
+    .video-fond{
+        height: 35vh;
+    }
+    /***SPITEFUL***/
+    .textpres{
+        margin-top:15vh;
+    }
+    .textpres p{
+        font-size:12px;
+    }
+    .imgpres img{
+        margin-top:15vh;
+    }
+    .imgpres h1{
+        font-size:80px;
+        margin-top:40px;
+    }
+    /***HSITORY***/
+    .sci{
+        height:68%;
+        margin-top:15vh;
+    }
+    .sci h1{
+        margin-left:35vw;
+        font-size:30px;
+        margin-top:-15vh;
+    }
+    .scipho .p1{
+        font-size:10px;
+        font-family: 'HasteristicoBOLD';
+        letter-spacing: .15vw;
+    }
+    .scipho .p11{
+        font-size:10px;
+        font-family: 'HasteristicoBOLD';
+        letter-spacing: .15vw;
+    }
+    .texts{
+        padding-top:8vh;
+    }
+    .texts p{
+        font-size:12px;
+    }
+    .textsci{
+        margin-top:0;
+    }
+    #texts{
+        width:94%;
+        height:80%;
+        margin-top:20vh;
+    }
+    #texthist{
+        height:10vh;
+    }
+    .texthist{
+        margin-top:0;
+        height:10vh;
+        font-size:12px;
+    }
+    .barsci{
+        margin-top:20vh;
+        margin-left:-60vw;
+        width:95.5vw;
+        background-color: var(--m);
+    }
+
+    /***MEDOCS***/
+    .list{
+        height:30vh;
+    }
+    .medoc-container{
+        height:70vh;
+        height:60vh;
+        background-color: var(--bl);
+    }
+    .medocs {
+        height:70vh;
+    }
+    .medocs .img{
+        width:300px;
+        height:70vh;
+        margin-top:0;
+        margin:0;
+    }
+    .title{
+        font-size:30px;
+    }
+    .blocinfo{
+        width:100%;
+        height:15vh;
+        margin:0;
+    }
+    #num{
+        width:25vw;
+        margin-top:9vw;
+    }
+    .num{
+        font-size:28px;
+    }
+    #pm{
+        width:60vw;
+        margin-left:-10vw;
+    }
+    #puces{
+        margin-top:25vh;
+    }
+    .puce{
+        width:14px;
+        height:14px;
+    }
+}

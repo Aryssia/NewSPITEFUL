@@ -1,0 +1,154 @@
+<?php
+    require "connexion.php";
+    if(isset($_POST['admin']))
+    {
+        if($_POST['admin']!=="" OR $_POST['password']!=="")
+        {
+            $admin=htmlspecialchars($_POST['admin']);
+            $password=htmlspecialchars($_POST['password']);
+    
+            $reqlog=$bdd->prepare("SELECT * FROM login WHERE admin=?");
+            $reqlog->execute(array($admin));
+    
+            if($donlog=$reqlog->fetch())
+            {
+                if(password_verify($password,$donlog['password']))
+                {
+                    $_SESSION['admin']=$donlog['admin'];
+                    header("LOCATION:administration.php#blocadmin");
+                }
+                else
+                {
+                    header("LOCATION:administration.php?error=3");
+                }
+            }
+            else
+            {
+                header("LOCATION=administration.php?error=2");
+            }
+            $reqlog->closeCursor();
+        }
+        else
+        {
+            header("LOCATION=administration.php?error=1");
+        }
+    }
+    
+    if(isset($_GET['deco']))
+    {
+        session_destroy();
+        header("LOCATION:administration.php");
+    }
+if(isset($_GET['delimg']))
+{
+    $delete=$bdd->prepare("DELETE FROM photos WHERE id=?");
+    $delete->execute(array($_GET['id']));
+    header("LOCATION:administration.php");
+}
+
+if(isset($_GET['delvid']))
+{
+    $delete=$bdd->prepare("DELETE FROM videos WHERE id=?");
+    $delete->execute(array($_GET['id']));
+    header("LOCATION:administration.php");
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/Illu/logo_final.png"/>
+    <link rel="stylesheet" type="text/css" href="styleadmin.css"/>
+    <title>Administration Spiteful</title>
+</head>
+<body>
+    <nav>
+        <div id="connexion">
+            <h1>CONNECTES-TOI</h1>
+            <div id="bloco">
+                <?php
+                
+                if(isset($_SESSION['admin']))
+                {
+                    echo'<div class="BJR">';
+                        echo'<div id="bjr"><b>Bonjour</b>, '.$_SESSION['admin'].'</div>';
+                        echo'<div id="deco"><a href="administration.php?deco=ok">Déconnexion</a></div>';
+                    echo'</div>';
+                }
+                else
+                {
+                echo'
+                <form method="POST" action="administration.php" id="form">
+                    <label class="textform" for="admin">Administrateur:<input type="text" id="Admin" name="admin"></label>
+                    <label class="textform" for="password">Mot de passe:<input type="password" id="Mdp" name="password"></label>
+                    <input id="boutco" type="submit" value="Connexion">
+                </form>';
+                }
+                ?>
+            </div>
+        </div>
+        <div id="retour"><a href="../index.php">Retour Spiteful</a></div>
+           
+    </nav>
+
+    <?php
+        if(isset($_SESSION['admin']))
+        {
+            echo'<div id="blocadmi">';
+                echo'<div class="bloctext">
+                        <div id="mambav"></div>
+                        <div id="titreP"><h2>PHOTOS</h2></div>
+                    </div>';
+                
+                echo'<div class="bloctext">';
+                    echo'<div id="PHOTOS">';
+                        
+                            $reqimg=$bdd->query("SELECT * FROM photos");
+                            while($donimg=$reqimg->fetch())
+                            {
+                                echo'
+                                <div class="photos">
+                                    <div class="slide"><b>'.$donimg['slidepho'].'</b></div>
+                                    <div class="nom">'.$donimg['nompho'].'</div>
+                                    <div class="photo"><img src="../images/'.$donimg['dossier'].'/'.$donimg['image'].'" alt="Mamba vert"></div>
+                                    <div class="supprimer"><a href="administration.php?id='.$donimg["id"].'&delimg=ok">SUPPRIMER</a></div>
+                                </div>
+    
+                                ';
+                            }  
+                            $reqimg->closeCursor(); 
+                    echo'</div>';
+                echo'</div>';
+            echo'</div>';
+        
+            echo'<div id="blocvid">';
+                echo'<div class="bloctext">';
+                    echo'<div id="VIDEOS">';
+
+                        $reqvid=$bdd->query("SELECT * FROM videos");
+                        while($donvid=$reqvid->fetch())
+                        {
+                            echo'
+                            <div class="videos">
+                                <div class="slide"><b>'.$donvid["slidevid"].'</b></div>
+                                <div class="nom">'.$donvid["nomvid"].'</div>
+                                <div class="video"><video src="../vidéos/'.$donvid['dossier'].'/'.$donvid['video'].'" poster="../images/JPEG/PS.jpg"></video></div>
+                                <div class="supprimer"><a href="administration.php?id='.$donvid["id"].'&delvid=ok">SUPPRIMER</a></div>
+                            </div>';
+                        }
+                        $reqvid->closeCursor();
+                    echo'</div>';
+                echo'</div>';
+        
+                echo'<div class="bloctext">
+                        <div id="meduse"></div>
+                        <div id="titreV"><h2>VIDEOS</h2></div>
+                    </div>';
+            echo'</div>';
+        }
+    ?>
+</body>
+</html>
