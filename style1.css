@@ -370,10 +370,9 @@ nav ul li{
 }
 .medoc-container{
     width: 70%;
-    height: 100vh;
+    min-height: 100vh;
     text-align: right;
     position: relative;
-    overflow-x: hidden;
 }
 
 #puces{
@@ -541,55 +540,94 @@ nav ul li{
 /*********** CONTACT ***********/
 #contact{
     width:100%;
-    height:95%;
-    padding-top: 100px;
+    min-height:100vh;
 }
 #contact .wrapper{
+    width:95%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
-#contact p{
-    font-size: 100px;
+#contact #MAP .CC1 p, #contact #FORM .CC2 p{
+    font-size: 60px;
     font-family:'theboldfont';
-    color:var(--m);
-}
-#MAP{
-    margin-left:15vw;
-    margin-right:10vw;
+    color:var(--n);
+    height:10vh;
+    width:40%;
 }
 #MAP .adr p, #FORM .adr p{
-    color:var(--n);
+    color:var(--bl);
     font-family: "Cabrion - Light";
     font-size:18px;
+    margin-top:-1vh;
 }
-.adr{
-    margin-top:2vh;
-}
-.adre {
-    margin-left:3.7vw;
+#MAP .adr2 p, #FORM .adr2 p{
+    color:var(--bl);
+    font-family: "Cabrion - Light";
+    font-size:18px;
+    margin-top:-1vh;
 }
 #FORM, #MAP{
     height:30vw;
-    width:30vw;
-    margin-top:15vh;
+    width:40%;
+    margin-top:30vh;
+    display:flex;
+}
+#MAP{
+    margin-left: 5vw;  
+    border-top:var(--n) solid 5px; 
+}
+#FORM{
+    margin-left:8vw;
+    border-bottom:var(--n) solid 5px;
+}
+#cartebox{
+    width:60%;
+    background-color:var(--n) ;
+}
+#carte{
+    margin-left:3vw;
+    margin-top:8vh;
+}
+#CC1{
+    width:40%;
+}
+.CC1 p{
+    margin-top:2vh;
+    margin-left:1vw;
+}
+.CC2 p{
+    margin-top:45vh;
+    margin-left:1vw;
 }
 #formulaire{
-    width:20vw;
-    height:30vh;
+    width:30vw;
     background-color: var(--n);
 }
-#formulaire form{
+.border{
+    width:80%;
+    height:3vh;
+    margin-top:.3vh;
     margin-left:1vw;
-    padding-top: 2vh;
+    border-bottom:solid var(--bl) .6px;
+}
+#formulaire form{
+    width:19vw;
+    min-height:33vh;
+    margin-top:6vh;
+    margin-left:2vw;
     overflow:hidden;
+    background-color: rgba(255,255,255,0.3);
+    padding-top:1.5vh;
 }
 #formulaire form .design{
+    width:70%;
     background: none;
     border: none;
     font-family: "Cabrion - Light";
-    opacity: 80%;
     font-size:13px;
-    color:var(--bl);
+    margin-top:.8vh;
+    margin-left:.7vw;
 }
 #formulaire form .destext{
     background: none;
@@ -597,16 +635,28 @@ nav ul li{
     font-family: "Cabrion - Light";
     opacity: 50%;
     font-size:13px;
-    border: solid 1px var(--bl);
+    border-bottom: solid .6px var(--bl);
     width: 15vw;
-    height:15vh;
+    height:10vh;
     color: var(--bl);
     opacity: 80%;
+    margin-left:1vw;
+    margin-top:1vh;
+}
+.adr2{
+    height:6vh;
+    width:80%;
+    margin-top:3vh;
+    margin-left:2vw;
 }
 .textform{
     font-family:"Cabrion - Light";
     font-size:18px;
     color:var(--bl);
+}
+.adr{
+    margin-top:4vh;
+    margin-left:3vw;
 }
 .flash-success{
     font-family: 15px;
@@ -624,10 +674,13 @@ nav ul li{
     font-size:16px;
     font-family:"Cabrion - Light";
     color:var(--bl);
+    margin-top:2vh;
+    margin-left:1vw;
+    margin-bottom:2vh;
+    transition: all 0.25s ease-in-out; 
 }
-#boutenv a:hover{
-    border:1px solid var(--m);
-
+#boutenv:hover{
+    color:var(--o);
 }
 
 /**FOOTER**/
@@ -660,252 +713,141 @@ footer p a:hover{
 @media all and (max-width: 768px)
 {
 
+    
+}
+/******IPAD HOR******/
+@media all AND (max-width: 1024px){
     .slide{
-        min-height:40vh;
+        min-height:80vh;
     }
-    /***ACCUEIL***/
-    nav{
-        padding-bottom: 5px;
-    }
-    nav ul{
-        width:50vw;
-    }
-    .nav-scroll .bar{
-        background-color:var(--m);
-        margin-left:12vw;
-    }
-    .nav-scroll #MODE{
-        color:var(--m);
-    }
-    .nav-scroll #MODE a{
-        color:var(--m);
-    }
-    .nav-scroll{
-        background-color: transparent;
-    }
-    #logomenu{
-        background-image: none;
-    }
-    #MODE{
-        text-align: center;
-        font-size:14px;
-    }
-    .tiret{
-        display: block;
-    }
+    /***HOME***/
     .video-fond{
-        height:40vh;
+        height:100%;
     }
-    /******SPITEFUL*****/
-    #textpres{
-        width:60%;
-        height:60vh;
-    }
-    #imgpres{
-        width:40%;
-        height:60vh;
-    }
+    /**PRES**/
     .textpres{
-        width:96%;
-        height:35vh;
-        margin-top:14vh;
-        margin-left:2%;
-        text-align: left;
+        height:50vh;
+        margin-top:35vh;
     }
     .textpres p{
         font-size:20px;
     }
     .imgpres h1{
-        font-size:150px;
-        transform: rotate(-90deg);
-        margin-left:38vw;
-        margin-top:0vh;
+        font-size:170px;
+        margin-top:-20vh;
     }
     .imgpres img{
-        width:100%;
-        margin-left:0;
-        margin-top:12vh;
+        margin-top:25vh;
     }
-
-    /****HISTORY***/
-    #history .wrapper{
-        flex-direction: column;
-    }
-    .texts {
-        text-align: left;
-    }
-    #sci{
-        width:100%;
-        height:60vh;
-    }
-    #texthist{
-        width: 100%;
-        height:20vh;
-    }
+    /***HISTORY***/
     .sci{
-        height:68%;
-        margin-top: 7vh;
+        height:60vh;
+        margin-top:40vh;
     }
     .sci h1{
-        margin-top:-30vh;
-        margin-left:32vw;
-        font-size:55px;
-    }
-    .sci{
-        margin-top:12vh;
-    }
-    .scipho img{
-        width:65%;
-        height:65%;
-    }
-    .texts{
-        padding-top:8vh;
-    }
-    .textsci{
-        margin-top:0;
-    }
-    #texts{
-        width:94%;
-        height:80%;
-        margin-top:26vh;
-    }
-    .texthist{
-        font-size:20px;
-        margin-top:6vh;
-    }
-    .barsci{
-        margin-top:20vh;
-        margin-left:-60vw;
-        width:95.5vw;
-        background-color: var(--m);
-    }
-    /****MEDOCS*****/
-    #medoc .wrapper{
-        flex-direction: column;
-    }
-
-    .list{
-        width: 100%;
-        height: 40vh; 
-    }
-    .med-info{
-        width: 100%;
-        height: 35vh;
+        font-size:57px;
 
     }
-    .blocinfo{
-        width:55%;
-        height:30%;
-        margin-left:20vw;
-        margin-top:2vh;
-    }
-    .title{
-        padding-top: 10vh;
-    }
-    #num{
-        width:15vw;
-        margin:5vw;
-    }
-    #pm{
-        margin-top:1vh;
-    }
-    .medoc-container{
-        width: 96%;
-        height:50vh;
-        overflow: hidden;
-        margin-left:4%;
-        margin-top:-5vh;
-    }
-    #puces{
-        width:30%;
-        margin-top:35vh;
-        margin-left:-12.5vw;
-        transform: rotate(90deg);
-        z-index:1000000000000000000000000;
-    }
-    .puce{
-        width:25px;
-        height:25px;
-    }
-    .medocs{
-        margin-top:10vh;
-    }
-    .medocs .img{
-        height:400px;
-        margin:0;
-        margin-top:1vh;
-        margin-left:15vw;
-    }
-    .nom{
-        display:none;
-    }
-    .title{
-        font-size:60px;
-    }
-    .blocinfo{
-        height:60.5%;
-        background-color: var(--n);
-        margin-left:17vw;
-    }
-    #num{
-        width:22vw;
-        margin-top:6vh;
-        margin-left:-5vw;
-    }
-    .num{
-        font-size:55px;
-    }
-    #pm{
-        width:35vw;
-        height:14vh;
-    }
-    .pouc,.maladie{
-        font-size:60px;
-        line-height:100%;
-    }
-    .puce:hover{
-        background-color:var(--n);
-    }
-    /****VIDEO****/
-    #video .wrapper{
-        flex-direction: column;
-    }
-    /***CONTACT***/
-    #contact{
-        padding-top: 0px;
-    }
-    #contact p{
-        font-size:60px;
-    }
-    #MAP{
-        margin-left:7vw;
-        margin-right:5vw;
-    }
-    #FORM, #MAP{
-        margin-top:3vh;
-        height:50vh;
-        width:40vw;
-    }
-    #carte{
-    }
-    .adre {
-        margin-left:10vw;
-    }
-    #formulaire{
+    .scipho p{
         width:100%;
     }
-    #formulaire form .destext{
-        width: 98%;
+    .texts{
+        height:100%;
+        margin:0;
+        padding-top:5vh;
+        padding-left:1.3vw;
     }
-}
-/******IPAD HOR******/
-@media all AND (max-width: 1024px){
-
+    .texts p{
+        font-size:15px;
+    }
+    .barsci{
+        margin-top:0;
+    }
+    /***MEDOC***/
+    .medocs{
+        height:100%;
+        margin-top:5vh;
+    }
+    .medocs .img{
+        margin-left:25vw;
+        margin-top:10vh;
+    }
+    .medocs img{
+        width:200px;
+        height:200px;
+    }
+    #medoc-info{
+        height:50%;
+    }
+    .title{
+        font-size:46px;
+    }
+    #pm{
+        width:15vw;
+        margin-top:5vh;
+    }
+    #num{
+        width:15vh;
+        margin-top:8vh;
+        margin-left:-2vw;
+    }
+    .nom{
+        font-size:90px;
+        margin-top:-8vh;
+    }
+    /***VIDEO***/
+    #video{
+        background-color: cyan;
+    }
+    /***CONTACT***/
+    #FORM, #MAP{
+        height:40vh;
+        width:80%;
+        margin-top:0;
+    }
+    #MAP{
+        margin-left: 10vw;
+        margin-top:13vh;  
+    }
+    #FORM{
+        margin-left:10vw;
+        margin-top:3vh;
+    }
+    #carte{
+        margin-top:4vh;
+    }
+    #contact #MAP .CC1 p, #contact #FORM .CC2 p{
+        font-size:40px;
+    }
+    .CC2 p{
+        margin-top:31vh;
+    }
+    #formulaire{
+        width:50vw;
+        min-height:20vh;
+    }
+    #formulaire form{
+        width:40vw;
+        margin-top:3vh;
+    }
+    #formulaire form .destext{
+        width: 32vw; 
+    }
+    #MAP .adr p, #FORM .adr p{
+        margin-top:-1.5vh;
+    }
+    .textform{
+        font-size:14px;
+    }
 }
 /****IPHONE 6/7/8 *****/
 @media all AND (max-width: 375px){
     .slide{
         min-height:35vh;
+    }
+    /***HOME***/
+    .video-fond{
+        height:100%;
     }
     /***ACCUEIL***/
     #logomenu{

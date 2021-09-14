@@ -247,18 +247,24 @@
 
     <div class="slide" id="contact">
         <div class="wrapper">
-            <div id="MAP">
-                <p>CARTE</p>
-                <div id=carte><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1219.560184565722!2d5.564230974713011!3d50.563097899605616!2m3!1f0!2f39.0647406244768!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c0f8276cc1ca37%3A0x66fe1582134563d!2sEyeD%20Pharma%20S.A.!5e1!3m2!1sfr!2sbe!4v1619257307662!5m2!1sfr!2sbe" {width="250" height="300" style="border:0;" allowfullscreen="" loading="lazy"}></iframe></div>
 
-                    <div class="adr"> 
-                    <p><b>Adresse:</b> Quartier Hôpital</p><br/>
-                        <p class="adre">Avenue Hippocrate 5</p><br/>
-                        <p class="adre">4000 Liège</p>
-                    </div>
+            <div id="MAP">
+                
+                <div id="CC1" class="CC1"><p>CARTE</p></div>
+                
+                <div id="cartebox">
+                    <div id=carte><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1219.560184565722!2d5.564230974713011!3d50.563097899605616!2m3!1f0!2f39.0647406244768!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c0f8276cc1ca37%3A0x66fe1582134563d!2sEyeD%20Pharma%20S.A.!5e1!3m2!1sfr!2sbe!4v1619257307662!5m2!1sfr!2sbe" {min-width="200" min-height="200" style="border:0;" allowfullscreen="" loading="lazy"}></iframe></div>
+
+                        <div class="adr"> 
+                            <p>Quartier Hôpital</p><br/>
+                            <p>Avenue Hippocrate 5</p><br/>
+                            <p>4000 Liège</p>
+                        </div>
+                </div>
             </div>
+
             <div id="FORM"> 
-                <p>Contact</p>
+
                     <div id="formulaire">
                         <form method='POST' action="traitmess.php">
                     <?php
@@ -273,20 +279,23 @@
                         }
 
                     ?>
-                            <label class="textform" for="Nom">Nom:</label> <input type="text" id="name" name="nom" placeholder="Durieu" class="design"><br/>
-                            <label class="textform" for="Prenom">Prénom:</label> <input type="text" id="surname" name="prenom" placeholder="Marie" class="design"><br/>
-                            <label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"><br/>
-                            <label class="textform" for="Message">Message:</label><br/>
-                            <textarea id="mess" name="mess" class="destext">Bonjour, j'aimerais savoir ...</textarea><br>
+                            <div class="border"><label class="textform" for="Nom">Nom:</label> <input type="text" id="name" name="nom" placeholder="Durieu" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Prenom">Prénom:</label> <input type="text" id="surname" name="prenom" placeholder="Marie" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Message">Message:</label></div><br/>
+                            <textarea id="mess" name="mess" class="destext"></textarea><br>
                             <a href="mail.php"><input id="boutenv" type="submit" value="Envoyer"></a>
                         </form>
 
                         
-                    </div>
-                    <div class="adr"> 
+                    
+                    <div class="adr2"> 
                         <p><b>TEL:</b> (+32)065/55.22.48</p><br/>
                         <p><b>MAIL:</b> spiteful.produitspharma@gmail.com</p><br/> 
                     </div>
+                    </div>
+
+                    <div class="CC2"><p>Contact</p></div>
             </div>
         </div>
     </div>
