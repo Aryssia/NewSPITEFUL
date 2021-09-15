@@ -108,9 +108,9 @@ nav ul li{
 /***BURGETBOUT***/
 .burgerbout{
     margin: auto;
-   width: 40px;
-   height: 40px;
-   cursor: pointer;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 .bar{
     width: 100%;
@@ -709,12 +709,6 @@ footer p a:hover{
 
 /***MEDIA QUERIES***/
 
-/******IPAD VER******/
-@media all and (max-width: 768px)
-{
-
-    
-}
 /******IPAD HOR******/
 @media all AND (max-width: 1024px){
     .slide{
@@ -861,6 +855,10 @@ footer p a:hover{
         height:5vh;
     }
 }
+/*****WINDOW SURFACE 7*****/
+@media all AND (max-width: 2736px){
+    
+}
 /****IPHONE 6/7/8 *****/
 @media all AND (max-width: 375px){
     .slide{
@@ -868,52 +866,73 @@ footer p a:hover{
     }
     /***HOME***/
     .video-fond{
-        height:100%;
+        height: 35vh;
     }
     /***ACCUEIL***/
+    nav{
+        min-height: 3vh;
+    }
+    nav ul{
+        width:50%;
+    }
     #logomenu{
         width:10%;
         height:60px;
+        margin-top:1vh;
     }
     .burgerbout{
-        width:28px;
-        height:28px;
+        width:30px;
+        height:30px;
+    }
+    .bar{
+        height:3px;
+    }
+    #MODE{
+        font-size:15px;
     }
     #options div a{
         font-size: 20px;
     }
-    .video-fond{
-        height: 35vh;
-    }
     /***SPITEFUL***/
     #pres{
-        height:35vh;
+        height:38vh;
     }
     .textpres{
         margin-top:10vh;
+        text-align: left;
     }
     .textpres p{
-        font-size:12px;
+        font-size:11px;
     }
     .imgpres img{
-        margin-top:12vh;
+        margin-top:5vh;
     }
     .imgpres h1{
-        font-size:80px;
-        margin-top:40px;
+        font-size:60px;
+        margin-top:-8vh;
     }
     /***HSITORY***/
     #history{
-        height:45vh;
+        height:55vh;
+    }
+    #sci{
+        width:100%;
+        height:30vh;
+        margin-top:8vh;
     }
     .sci{
-        height:68%;
-        margin-top:15vh;
+        height:70%;
+        margin-top:5vh;
+    }
+    .sci img{
+        width:50%;
+        height:50%;
     }
     .sci h1{
         margin-left:35vw;
-        font-size:30px;
+        font-size:20px;
         margin-top:-12vh;
+        margin-left:22vw;
     }
     .scipho .p1{
         font-size:10px;
@@ -926,32 +945,38 @@ footer p a:hover{
         letter-spacing: .15vw;
     }
     .texts{
-        width: 80%;
+        width: 100%;
         height:100%;
-        padding-top:3vh;
+        padding-top:2vh;
         padding-left:5vw;
+        text-align: left;
     }
     .texts p{
         font-size:14px;
     }
     .textsci{
+        width:100%;
+        height:100%;
         margin-top:0;
     }
     #texts{
         width:94%;
-        height:68%;
-        margin-top:10vh;
+        height:100%;
+        margin-top:0vh;
     }
     #texthist{
-        height:10vh;
+        width:100%;
+        height:8vh;
+        margin-top:2vh;
+        background
     }
     .texthist{
-        margin-top:0;
-        height:10vh;
+        margin-top:1vh;
+        height:7vh;
         font-size:12px;
     }
     .barsci{
-        margin-top:-.8vh;
+        margin-top:-.3vh;
         margin-left:-60vw;
         width:95.5vw;
     }
@@ -1000,5 +1025,44 @@ footer p a:hover{
     }
     .pouc,.maladie{
         font-size:45px;
+    }
+    /***CONTACT***/
+    #contact #MAP .CC1 p, #contact #FORM .CC2 p{
+        display:none;
+        width:0%;
+    }
+    #MAP{
+        border-top: 0px;
+    }
+    #FORM{
+        border-bottom:0px;
+    }
+    #cartebox{
+        width:100%;
+    }
+    #formulaire{
+        width:100%;
+    }
+    #carte{
+        margin-left:-2vw;
+    }
+    #formulaire form{
+        min-height:20vh;
+        margin-left:4vw;
+        margin-top:2vh;
+        width:90%;
+        padding-left:6vw;
+    }
+    .adr{
+        margin-left:4vw;
+    }
+    .adr2{
+        margin-left:0vw;
+    }
+    /***FOOTER***/
+    footer{
+        height:10vh;
+        width:90%;
+        text-align: center;
     }
 }
