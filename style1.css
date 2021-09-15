@@ -555,13 +555,13 @@ nav ul li{
     height:10vh;
     width:40%;
 }
-#MAP .adr p, #FORM .adr p{
+#MAP .adr p{
     color:var(--bl);
     font-family: "Cabrion - Light";
     font-size:18px;
     margin-top:-1vh;
 }
-#MAP .adr2 p, #FORM .adr2 p{
+#FORM .adr2 p{
     color:var(--bl);
     font-family: "Cabrion - Light";
     font-size:18px;
@@ -801,20 +801,23 @@ footer p a:hover{
     }
     /***CONTACT***/
     #FORM, #MAP{
-        height:40vh;
         width:80%;
         margin-top:0;
     }
     #MAP{
+        height:40vh;
         margin-left: 10vw;
         margin-top:13vh;  
     }
     #FORM{
+        min-height:55vh;
         margin-left:10vw;
         margin-top:3vh;
+        margin-bottom:5vh;
     }
     #carte{
         margin-top:4vh;
+        margin-left:8vw;
     }
     #contact #MAP .CC1 p, #contact #FORM .CC2 p{
         font-size:40px;
@@ -824,20 +827,38 @@ footer p a:hover{
     }
     #formulaire{
         width:50vw;
-        min-height:20vh;
+        min-height:40vh;
     }
     #formulaire form{
-        width:40vw;
-        margin-top:3vh;
+        width:26vw;
+        min-height:10vw;
+        margin-top:5vh;
+        margin-left:12vw;
     }
     #formulaire form .destext{
-        width: 32vw; 
+        height:4vh;
+        width:80%;
+        margin-top:.2vh;
     }
-    #MAP .adr p, #FORM .adr p{
+    #MAP .adr p{
         margin-top:-1.5vh;
+        margin-left:4vw;
+    }
+    #FORM .adr2 p{
+        width:10vw;
+        font-size:14px;
+        margin-left:10vw;
     }
     .textform{
         font-size:14px;
+    }
+    #boutenv{
+        margin-top:.4vh;
+        margin-bottom:1vh;
+    }
+    /***FOOTER***/
+    footer{
+        height:5vh;
     }
 }
 /****IPHONE 6/7/8 *****/
