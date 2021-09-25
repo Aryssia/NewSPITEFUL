@@ -1,7 +1,7 @@
 <?php 
 
 try{
-	$bdd = new PDO('mysql:host=localhost;dbname=kctb7549_spiteful;charset=utf8','kctb7549_admin','Admin2021!',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+	$bdd = new PDO('mysql:host=localhost;dbname=spiteful;charset=utf8','root','root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {

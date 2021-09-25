@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 22, 2021 at 12:31 PM
+-- Generation Time: Sep 15, 2021 at 09:34 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -65,14 +65,29 @@ CREATE TABLE `contact` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `contact`
+-- Table structure for table `imgvideo`
 --
 
-INSERT INTO `contact` (`id`, `nom`, `prenom`, `mail`, `mess`, `date`) VALUES
-(1, 'Durieu', 'Marie', 'email@gmail.com', 'Bonjour, je voudrais...', '2021-03-11'),
-(2, 'Durieu', 'Marie', 'email@gmail.com', 'Bonjour, je voudrais...', '2021-06-19'),
-(3, 'Flament', 'Marie', 'aryssiaphoenix@gmail.com', 'TEST', '2021-06-19');
+CREATE TABLE `imgvideo` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `imgvid` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `imgvideo`
+--
+
+INSERT INTO `imgvideo` (`id`, `nom`, `imgvid`) VALUES
+(1, 'Green Mamba', 'mambva.jpg'),
+(2, 'Black Mamba', 'Black Mamba.jpg'),
+(3, 'Cuboméduse', 'Méduse.jpg'),
+(4, 'Palythoa', 'Palythoa.jpg'),
+(5, 'Banana Spider', 'Araignée Banane.jpg'),
+(6, 'Conus', 'Conus.jpg');
 
 -- --------------------------------------------------------
 
@@ -140,7 +155,6 @@ CREATE TABLE `photos` (
 --
 
 INSERT INTO `photos` (`id`, `nompho`, `slidepho`, `image`, `dossier`) VALUES
-(8, 'Mamba vert', 'Slide Produit', 'Green_Mamba_ret.png', 'PNG'),
 (9, 'Cuboméduse', 'Slide Produit', 'Chironex_Fleckeri.png', 'PNG'),
 (10, 'Palythoa', 'Slide Produit', 'palyhtoa.png', 'PNG'),
 (11, 'Conus Mage', 'Slide Produit', 'Conus_marmoreus.png', 'PNG'),
@@ -195,16 +209,6 @@ CREATE TABLE `videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `videos`
---
-
-INSERT INTO `videos` (`id`, `nomvid`, `slidevid`, `video`, `dossier`, `poster`) VALUES
-(1, 'Charte graph FR', 'Vidéo', 'Charte graphique.mp4', 'FR', 'CGF.jpg'),
-(3, 'Graphic Design EN', 'Video', 'Charte graphique EN.mp4', 'EN', 'CGE.jpg'),
-(4, 'Pres Spiteful EN', 'Video', 'Présentation SPITEFUL En.mp4', 'EN', 'PS.jpg'),
-(5, 'Logo', 'Video', 'LOGO FI.mp4', 'vidéos', 'PS.jpg');
-
---
 -- Indexes for dumped tables
 --
 
@@ -218,6 +222,12 @@ ALTER TABLE `animaux`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `imgvideo`
+--
+ALTER TABLE `imgvideo`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -264,7 +274,13 @@ ALTER TABLE `animaux`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `imgvideo`
+--
+ALTER TABLE `imgvideo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `login`

@@ -11,6 +11,11 @@
         }
         header("LOCATION:index.php");
     }
+
+    if(isset($_GET['cookie'])){
+        setcookie('legal','accept', time() + 365*24*3600, null, null, false, true);
+        header("LOCATION:index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,7 +31,7 @@
             echo"<link rel='stylesheet' type='text/css' href='style2.css'>"; 
         }
         else{
-            echo"<link rel='stylesheet' type='text/css' href='style1.css'>";
+            echo"<link rel='stylesheet' type='text/css' href='style13.css'>";
         }
      }
      else
@@ -212,36 +217,32 @@
 
     <div class="slide" id="video">
         <div class="wrapper">
-                <div class="puce-container" id='pucesimg'>     
-                        <?php
-                            $video = $bdd->query('SELECT * FROM imgvideo');
-                            while($donVid = $video->fetch())
-                            {
-                                echo"<div class='pucesimg' data-target=''>";
-                                    echo"<img src='images/".$donVid['imgvid']."' alt='".$donVid['nom']."'/>";
-                                echo"</div>";
-                            }
-
-                        ?>     
-                </div>
-                    
-                <div class="video-container">
-
-                    <?php
-                    $video = $bdd->query('SELECT * FROM videos');
-                    while($donVid = $video->fetch())
+        <div id="pucevid">
+                <?php
+                    $vids = $bdd->query('SELECT * FROM imgvideo');
+                    while($donVid = $vids->fetch())
                     {
-                        echo"<div id='vid-".$donVid['id']."' class='vids'>";
-                            echo"<div class='video'>";
-                                echo"<video controls>";
-                                    echo"<source src='videos/".$donVid['video']."' alt='".$donVid['nomvid']."'>";
-                                echo"</video>";
-                            echo"</div>";
-                        echo"</div>";
+                        echo'<div class="pucesvid" data-target="#vid-info'.$donVid['id'].'">'.$donVid['nom'].'</div>';
                     }
-                    $video->closeCursor();
-                    ?>   
-                </div>               
+                ?>    
+            </div>
+
+            <div class="video-container">
+                    <?php
+                        $vids = $bdd->query('SELECT * FROM animaux');
+                        while($donVid = $vids->fetch())
+                        {
+                            echo'<div id="vid'.$donVid['id'].'" class="vids">';
+                                echo'<div class="nomanim">'.$donVid['nomanim_1'].'</div>';
+                                echo'<div class="video">';
+                                    echo'<video controls><source src="videos/'.$donVid['video'].'"/></video>';
+                                echo'</div>';
+                                echo'<div class="desc">'.$donVid['description'].'</div>';
+                            echo'</div>';
+                        }
+                        $vids->closeCursor();
+                    ?>
+            </div>              
         </div>
     </div>
 
@@ -258,7 +259,7 @@
                         <div class="adr"> 
                             <p>Quartier Hôpital</p><br/>
                             <p>Avenue Hippocrate 5</p><br/>
-                            <p>4000 Liège</p>
+                            <p>4000 Liège (Belgique)</p>
                         </div>
                 </div>
             </div>
@@ -300,9 +301,26 @@
         </div>
     </div>
 
+    <?php 
+        if(!isset($_COOKIE['legal'])){
+    ?>
+         <div id="cookie">
+            <p>
+                Ce site utilise des cookies veuillez accepter les termes d'uilisation 
+            </p>
+            <div class="boutCook">
+                <a href="">Termes et conditions</a>
+                <a href="index.php?cookie=accept">Accepter les cookies</a>
+            </div>
+        </div>
+
+    <?php
+        }
+    ?>
+
     <footer>
-        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site réalisé dans le cadre d'un TEI(Travail d'études intégrées) _ EPSE _ Bachelier Infographie/
-        <a href="admin/administration.php">Administration</a> - <a href="EN/indexen.php">EN</a></p>
+        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site réalisé dans le cadre d'un TEI(Travail d'études intégrées) _ EPSE _ Bachelier Infographie/ Ce site utilise des cookies/
+        <a href="EN/index.php">EN</a></p>
     </footer>
 
     <script>

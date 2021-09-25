@@ -51,9 +51,9 @@
             </li>
             <li>
                 <div id="MODE">
-                    <a id="mode1" href='index.php?mode=1'>CLAIR</a>
+                    <a id="mode1" href='index.php?mode=1'>LIGHT</a>
                     <span class="tiret">-</span>
-                   <a id="mode2" href='index.php?mode=2'>SOMBRE</a>
+                   <a id="mode2" href='index.php?mode=2'>DARK</a>
                 </div>
             </li>
         </ul>
@@ -63,11 +63,11 @@
     <div class="menu">
         <div class="container-menu">
             <div id="options">
-                <div><a href="#home" class="nav-link">Accueil</a></div>
+                <div><a href="#home" class="nav-link">Home</a></div>
                 <div><a href="#pres" class="nav-link">Spiteful</a></div>
-                <div><a href="#history" class="nav-link">Histoire</a></div>
-                <div><a href="#medoc" class="nav-link">Produits</a></div>
-                <div><a href="#video" class="nav-link">Vidéos</a></div>
+                <div><a href="#history" class="nav-link">History</a></div>
+                <div><a href="#medoc" class="nav-link">Products</a></div>
+                <div><a href="#video" class="nav-link">Videos</a></div>
                 <div><a href="#contact" class="nav-link">Contact</a></div>
             </div> 
         </div>
@@ -75,26 +75,26 @@
    
     <div class="slide" id="home">
      <div class="video-fond">
-         <video src="videos//PresSPITEFULfr.mp4" autoplay muted loop></video>
+         <video src="../videos/PresSPITEFULen.mp4" autoplay muted loop></video>
      </div>
     </div>
     <div class="slide" id="pres">
         <div class="wrapper">
             <div id="textpres">
                 <div class="textpres">
-                    <p>Spiteful est une marque de produits pharmaceutiques proposant différents médicaments pour divers maux.
-                    Chacun de ces produits est liés à un animal de cette Terre, car c'est à base de molécules provenant de divers venins que les scientifiques ont extrait le peptide <b style="color:var(--o)">MIRACLE</b> pour vous soulager!</p><br/>
+                    <p>Spiteful is a brand of pharmaceutical products offering different medicines for various ailments.
+                    Each of these products is linked to an animal on this Earth, because it is based on molecules from various venoms that scientists extracted the peptide <b style="color:var(--o)">MIRACLE</b> to relieve you!</p><br/>
 
-                    <p>Ces médicaments sont présentés sous différentes formes:</p>
-                        <p class="PC">Pilules</p>
-                        <p class="PC">Crème</p>  
+                    <p>These medicinal products are presented in different forms:</p>
+                        <p class="PC">Pills</p>
+                        <p class="PC">Cream</p>  
                 </div> 
             </div>
 
             <div id="imgpres">
                 <div class="imgpres">
                     <img src="images/PNG/Green_Mamba.png"/>
-                    <h1>VENIN</h1>
+                    <h1>VENOM</h1>
                 </div>
             </div>
           
@@ -143,9 +143,9 @@
 
 
             <div id="texthist">
-                <div class='texthist'><p>Les premières études sur les venins d'animaux ne sont pas
-                aussi récente qu'on le pense. Depuis le 18s, différents scientifiques
-                s'y sont intérréssés.              
+                <div class='texthist'><p>The first studies on animal venoms were not
+                as recent as you think. Since the 18s, different scientists
+                are interested in it.             
                 </p>
                 </div>  
             </div>
@@ -247,18 +247,24 @@
 
     <div class="slide" id="contact">
         <div class="wrapper">
-            <div id="MAP">
-                <p>CARTE</p>
-                <div id=carte><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1219.560184565722!2d5.564230974713011!3d50.563097899605616!2m3!1f0!2f39.0647406244768!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c0f8276cc1ca37%3A0x66fe1582134563d!2sEyeD%20Pharma%20S.A.!5e1!3m2!1sfr!2sbe!4v1619257307662!5m2!1sfr!2sbe" {width="250" height="300" style="border:0;" allowfullscreen="" loading="lazy"}></iframe></div>
 
-                    <div class="adr"> 
-                    <p><b>Adresse:</b> Quartier Hôpital</p><br/>
-                        <p class="adre">Avenue Hippocrate 5</p><br/>
-                        <p class="adre">4000 Liège</p>
-                    </div>
+            <div id="MAP">
+                
+                <div id="CC1" class="CC1"><p>Map</p></div>
+                
+                <div id="cartebox">
+                    <div id=carte><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1219.560184565722!2d5.564230974713011!3d50.563097899605616!2m3!1f0!2f39.0647406244768!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c0f8276cc1ca37%3A0x66fe1582134563d!2sEyeD%20Pharma%20S.A.!5e1!3m2!1sfr!2sbe!4v1619257307662!5m2!1sfr!2sbe" {min-width="100" min-height="200" style="border:0;" allowfullscreen="" loading="lazy"}></iframe></div>
+
+                        <div class="adr"> 
+                            <p>Quartier Hôpital</p><br/>
+                            <p>Avenue Hippocrate 5</p><br/>
+                            <p>4000 Liège (Belgium)</p>
+                        </div>
+                </div>
             </div>
+
             <div id="FORM"> 
-                <p>Contact</p>
+
                     <div id="formulaire">
                         <form method='POST' action="traitmess.php">
                     <?php
@@ -273,27 +279,30 @@
                         }
 
                     ?>
-                            <label class="textform" for="Nom">Nom:</label> <input type="text" id="name" name="nom" placeholder="Durieu" class="design"><br/>
-                            <label class="textform" for="Prenom">Prénom:</label> <input type="text" id="surname" name="prenom" placeholder="Marie" class="design"><br/>
-                            <label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"><br/>
-                            <label class="textform" for="Message">Message:</label><br/>
-                            <textarea id="mess" name="mess" class="destext">Bonjour, j'aimerais savoir ...</textarea><br>
-                            <a href="mail.php"><input id="boutenv" type="submit" value="Envoyer"></a>
+                            <div class="border"><label class="textform" for="Nom">Name:</label> <input type="text" id="name" name="nom" placeholder="Durieu" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Prenom">Surname:</label> <input type="text" id="surname" name="prenom" placeholder="Marie" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Message">Message:</label></div><br/>
+                            <textarea id="mess" name="mess" class="destext"></textarea><br>
+                            <a href="mail.php"><input id="boutenv" type="submit" value="Send"></a>
                         </form>
 
                         
-                    </div>
-                    <div class="adr"> 
+                    
+                    <div class="adr2"> 
                         <p><b>TEL:</b> (+32)065/55.22.48</p><br/>
                         <p><b>MAIL:</b> spiteful.produitspharma@gmail.com</p><br/> 
                     </div>
+                    </div>
+
+                    <div class="CC2"><p>Contact</p></div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site réalisé dans le cadre d'un TEI(Travail d'études intégrées) _ EPSE _ Bachelier Infographie/
-        <a href="admin/administration.php">Administration</a> - <a href="EN/indexen.php">EN</a></p>
+        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site created as part of a TEI(Travail d'études intégrées) _ EPSE _ Bachelor of Computer Graphics/ This site uses cookies/
+        <a href="../index.php">FR</a></p>
     </footer>
 
     <script>
