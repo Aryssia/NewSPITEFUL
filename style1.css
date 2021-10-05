@@ -105,12 +105,10 @@ nav ul{
     width: 20%;
     display: flex;
     list-style: none;
-    background-color: #ff35c5;
 }
 nav ul li{
     flex: 1;
     display: flex;
-    background-color:#ffeb00;
 }
 
 /***BURGETBOUT***/
@@ -156,6 +154,7 @@ nav ul li{
     color:var(--n);
     text-decoration: none;
     transition: ease-in-out .5s;
+    margin-left: 40%;
 }
 #LANGUE a:hover{
     color:var(--o);

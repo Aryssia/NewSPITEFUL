@@ -58,7 +58,7 @@
             <li>
                 <div id="MODE">
                     <a id="mode1" href='index.php?mode=1'>CLAIR</a>
-                    <span class="tiret">-</span>
+                    <span class="tiret">/</span>
                    <a id="mode2" href='index.php?mode=2'>SOMBRE</a>
                 </div>
             </li>

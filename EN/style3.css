@@ -70,10 +70,10 @@ nav{
 .nav-scroll .bar{
     background-color:var(--m);
 }
-.nav-scroll #MODE{
+.nav-scroll #MODE, .nav-scroll #LANGUE{
     color:var(--m);
 }
-.nav-scroll #MODE a{
+.nav-scroll #MODE a, .nav-scroll #LANGUE a{
     color:var(--m);
 }
 .nav-open{
@@ -136,7 +136,23 @@ nav ul li{
 .burger-open .bar:nth-child(3){
     transform: translate(0px, -5px) rotate(25deg);
 }
-
+/***LANGUE***/
+#LANGUE{
+    color:var(--n);
+    margin: auto;
+    font-family: "HasteristicoBOLD";
+    font-size:20px;
+    letter-spacing: .1vw;
+}
+#LANGUE a{
+    color:var(--n);
+    text-decoration: none;
+    transition: ease-in-out .5s;
+    margin-left: 40%;
+}
+#LANGUE a:hover{
+    color:var(--o);
+}
 /***MODE***/
 #MODE{
     color:var(--n);
