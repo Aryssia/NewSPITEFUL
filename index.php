@@ -31,7 +31,7 @@
             echo"<link rel='stylesheet' type='text/css' href='style2.css'>"; 
         }
         else{
-            echo"<link rel='stylesheet' type='text/css' href='style13.css'>";
+            echo"<link rel='stylesheet' type='text/css' href='style1.css'>";
         }
      }
      else
@@ -54,6 +54,7 @@
                     <div class="bar"></div>
                 </div>
             </li>
+            <li id="LANGUE"><a href="EN/index.php">EN</a></li>
             <li>
                 <div id="MODE">
                     <a id="mode1" href='index.php?mode=1'>CLAIR</a>
@@ -98,7 +99,7 @@
 
             <div id="imgpres">
                 <div class="imgpres">
-                    <img src="images/PNG/Green_Mamba.png"/>
+                    <img src="images/PNG/GreenMamba.png"/>
                     <h1>VENIN</h1>
                 </div>
             </div>
@@ -217,31 +218,60 @@
 
     <div class="slide" id="video">
         <div class="wrapper">
-        <div id="pucevid">
+            <div id="pucevid">
                 <?php
                     $vids = $bdd->query('SELECT * FROM imgvideo');
                     while($donVid = $vids->fetch())
                     {
-                        echo'<div class="pucesvid" data-target="#vid-info'.$donVid['id'].'">'.$donVid['nom'].'</div>';
+                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(images/JPEG/'.$donVid['imgvid'].')">'.$donVid['nom'].'</div>';
                     }
                 ?>    
             </div>
 
             <div class="video-container">
-                    <?php
-                        $vids = $bdd->query('SELECT * FROM animaux');
-                        while($donVid = $vids->fetch())
-                        {
-                            echo'<div id="vid'.$donVid['id'].'" class="vids">';
-                                echo'<div class="nomanim">'.$donVid['nomanim_1'].'</div>';
-                                echo'<div class="video">';
-                                    echo'<video controls><source src="videos/'.$donVid['video'].'"/></video>';
-                                echo'</div>';
-                                echo'<div class="desc">'.$donVid['description'].'</div>';
+                <div id="action">
+                    <img src="images/Illu/Flèche.png">
+                    <p>Cliquer sur les annimaux pour voir les vidéos</p>
+                </div>
+                
+                <?php
+                    $vids = $bdd->query('SELECT * FROM animaux');
+                    while($donVid = $vids->fetch())
+                    {
+                        echo'<div id="vid-info-'.$donVid['id'].'" class="vids">';
+                            echo'<div class="nomanim">'.$donVid['nomanim_1'].'</div>';
+                            echo'<div class="prob">'.$donVid['probleme'].'</div>';
+                            echo'<div class="video">';
+                                echo'<video controls><source src="videos/'.$donVid['video'].'"/></video>';
                             echo'</div>';
-                        }
-                        $vids->closeCursor();
-                    ?>
+                            echo'<div class="desc">'.$donVid['description'].'</div>';
+
+                            echo'<div id="infoanim">';
+                                echo'<div class="animal">';
+                                    echo'<div class="na1"><p class="TitNH">NOM:</p>'.$donVid['nomanim_1'].'</div><br/>';
+                                    echo'<div class="na1"><p class="TitNH">NOM SCIENTIFIQUE:</p>'.$donVid['nomanim_2'].'</div>';
+
+                                    echo'<div class="habitat">';
+                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['habitat_1'].'</div><br/>';
+                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['habitat_2'].'</div>';
+                                    echo'</div>';
+                                echo'</div>';
+
+                                echo'<div class="malvid">';
+                                    echo'<div class="na1"><p class="TitNP">MALADIE:</p>'.$donVid['probleme'].'</div><br/>';
+                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'</div>';
+                                    echo'<div id="peptide"><p><b>*Un peptide est un polymère d’acides aminés reliés entre eux par des liaisons peptidiques. Il existe une énorme variété de peptides différents.</b></p></div><br/>';
+
+                                    echo'<div class="na1"><p class="TitNP">REMEDE:</p>'.$donVid['remede'].'</div><br/>';
+                                echo'</div>';
+
+                                echo'<div class="imgdesc"><img src=images/PNG/'.$donVid['imgdesc'].'></div>';
+                            echo'</div>';
+                                
+                        echo'</div>';
+                    }
+                    $vids->closeCursor();
+                ?>
             </div>              
         </div>
     </div>
@@ -306,11 +336,12 @@
     ?>
          <div id="cookie">
             <p>
-                Ce site utilise des cookies veuillez accepter les termes d'uilisation 
+                Notre site utilise des cookies pour mieux vous satisfaire durant votre visite. Veuillez accepter les termes et conditions de notre site.<br>
+                Merci et bonne visite!
             </p>
             <div class="boutCook">
-                <a href="">Termes et conditions</a>
-                <a href="index.php?cookie=accept">Accepter les cookies</a>
+                <div id="TC"><a href="polcookies.php">Termes et conditions</a></div>
+                <div id="ACCEPT"><a href="index.php?cookie=accept">J'accepte!</a></div>
             </div>
         </div>
 
@@ -320,7 +351,10 @@
 
     <footer>
         <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site réalisé dans le cadre d'un TEI(Travail d'études intégrées) _ EPSE _ Bachelier Infographie/ Ce site utilise des cookies/
-        <a href="EN/index.php">EN</a></p>
+        <a href="EN/index.php">EN-</a>
+        <a href="polcookies.php">Termes et conditions</a>
+    
+    </p>
     </footer>
 
     <script>
@@ -384,6 +418,21 @@
             }else{
                 nav.classList.add('nav-scroll')
             }
+        })
+
+        const pucesVid = document.querySelectorAll('.pucesvid')
+        const vids = document.querySelectorAll('.vids')
+        const action = document.querySelector('#action')
+
+        pucesVid.forEach(puce =>{
+            puce.addEventListener('click',()=>{
+                action.style.opacity = 0;
+                vids.forEach(vid=>{
+                    vid.classList.remove('vid-open')
+                })
+                target = document.querySelector(puce.dataset.target)
+                target.classList.add('vid-open')
+            })
         })
 
     </script>

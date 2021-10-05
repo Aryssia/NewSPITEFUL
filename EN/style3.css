@@ -16,23 +16,23 @@
 
 @font-face{
     font-family: "theboldfont";
-    src:url(typo/the_bold_font/theboldfont.ttf);
+    src:url(../typo/the_bold_font/theboldfont.ttf);
 }
 @font-face{
     font-family: "Cabrion - Light";
-    src:url(typo/cabrion/Cabrion\ -\ Light.otf);
+    src:url(../typo/cabrion/Cabrion\ -\ Light.otf);
 }
 @font-face{
     font-family: "Simple Print";
-    src:url(typo/simple_print/Simple\ Print.ttf);
+    src:url(../typo/simple_print/Simple\ Print.ttf);
 }
 @font-face{
     font-family: "Hasteristico";
-    src:url(typo/hasteristico/Hasteristico.ttf);
+    src:url(../typo/hasteristico/Hasteristico.ttf);
 }
 @font-face{
     font-family: "HasteristicoBOLD";
-    src:url(typo/hasteristico/HasteristicoBOLD.ttf);
+    src:url(../typo/hasteristico/HasteristicoBOLD.ttf);
 }
 
 *{
@@ -76,12 +76,6 @@ nav{
 .nav-scroll #MODE a{
     color:var(--m);
 }
-.nav-scroll #LANGUE{
-    color:var(--m);
-}
-.nav-scroll #LANGUE a{
-    color:var(--m);
-}
 .nav-open{
     background-color: transparent;
 }
@@ -90,7 +84,7 @@ nav{
     height: 80px;
     margin-top:1vh;
     margin-left:2vw;
-    background-image: url(images/Illu/logo_final.png);
+    background-image: url(../images/Illu/logo_final.png);
     background-size:contain;
     background-repeat: no-repeat;
 }
@@ -105,12 +99,10 @@ nav ul{
     width: 20%;
     display: flex;
     list-style: none;
-    background-color: #ff35c5;
 }
 nav ul li{
     flex: 1;
     display: flex;
-    background-color:#ffeb00;
 }
 
 /***BURGETBOUT***/
@@ -144,22 +136,7 @@ nav ul li{
 .burger-open .bar:nth-child(3){
     transform: translate(0px, -5px) rotate(25deg);
 }
-/***LANGUE***/
-#LANGUE{
-    color:var(--n);
-    margin: auto;
-    font-family: "HasteristicoBOLD";
-    font-size:20px;
-    letter-spacing: .1vw;
-}
-#LANGUE a{
-    color:var(--n);
-    text-decoration: none;
-    transition: ease-in-out .5s;
-}
-#LANGUE a:hover{
-    color:var(--o);
-}
+
 /***MODE***/
 #MODE{
     color:var(--n);
@@ -186,7 +163,7 @@ nav ul li{
     left: -100%;
     z-index: 99;
     background-color: white;
-    background-image: url(images/Illu/Logo\ Spiteful\ Final\ R.png.png);
+    background-image: url(../images/Illu/Logo\ Spiteful\ Final\ R.png.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -514,7 +491,7 @@ nav ul li{
 .pouc, .maladie{
     color:var(--bl);
     font-family:"Simple Print";
-    font-size:44px;
+    font-size:34px;
 }
 .nom{
     font-size:150px;
@@ -536,7 +513,7 @@ nav ul li{
     width:50%;
     height:100vh;
     display: flex;
-    z-index:60;
+    z-index:100000;
 }
 .pucesvid{
     height:80%;

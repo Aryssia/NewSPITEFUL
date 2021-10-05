@@ -16,23 +16,23 @@
 
 @font-face{
     font-family: "theboldfont";
-    src:url(typo/the_bold_font/theboldfont.ttf);
+    src:url(../typo/the_bold_font/theboldfont.ttf);
 }
 @font-face{
     font-family: "Cabrion - Light";
-    src:url(typo/cabrion/Cabrion\ -\ Light.otf);
+    src:url(../typo/cabrion/Cabrion\ -\ Light.otf);
 }
 @font-face{
     font-family: "Simple Print";
-    src:url(typo/simple_print/Simple\ Print.ttf);
+    src:url(../typo/simple_print/Simple\ Print.ttf);
 }
 @font-face{
     font-family: "Hasteristico";
-    src:url(typo/hasteristico/Hasteristico.ttf);
+    src:url(../typo/hasteristico/Hasteristico.ttf);
 }
 @font-face{
     font-family: "HasteristicoBOLD";
-    src:url(typo/hasteristico/HasteristicoBOLD.ttf);
+    src:url(../typo/hasteristico/HasteristicoBOLD.ttf);
 }
 
 *{
@@ -42,7 +42,7 @@
 }
 html,body{
     scroll-behavior: smooth;
-    background-color: var(--bl);
+    background-color: var(--n);
 }
 .slide{
     width: 100%;
@@ -54,7 +54,7 @@ html,body{
 nav{
     width: 100%;
     min-height: 8vh;
-    background-color:var(--bl);
+    background-color:var(--n);
     display: flex;
     position: fixed;
     top: 0;
@@ -68,19 +68,13 @@ nav{
     background-color: transparent;
 }
 .nav-scroll .bar{
-    background-color:var(--m);
+    background-color:var(--o);
 }
 .nav-scroll #MODE{
-    color:var(--m);
+    color:var(--o);
 }
 .nav-scroll #MODE a{
-    color:var(--m);
-}
-.nav-scroll #LANGUE{
-    color:var(--m);
-}
-.nav-scroll #LANGUE a{
-    color:var(--m);
+    color:var(--o);
 }
 .nav-open{
     background-color: transparent;
@@ -90,7 +84,7 @@ nav{
     height: 80px;
     margin-top:1vh;
     margin-left:2vw;
-    background-image: url(images/Illu/logo_final.png);
+    background-image: url(../images/Illu/Logo\ Spiteful\ Final\ b.png);
     background-size:contain;
     background-repeat: no-repeat;
 }
@@ -105,12 +99,10 @@ nav ul{
     width: 20%;
     display: flex;
     list-style: none;
-    background-color: #ff35c5;
 }
 nav ul li{
     flex: 1;
     display: flex;
-    background-color:#ffeb00;
 }
 
 /***BURGETBOUT***/
@@ -123,7 +115,7 @@ nav ul li{
 .bar{
     width: 100%;
     height: 5px;
-    background-color:var(--n);
+    background-color:var(--bl);
     margin-top: 5px;
     transition: all 0.5s;
 }
@@ -144,32 +136,17 @@ nav ul li{
 .burger-open .bar:nth-child(3){
     transform: translate(0px, -5px) rotate(25deg);
 }
-/***LANGUE***/
-#LANGUE{
-    color:var(--n);
-    margin: auto;
-    font-family: "HasteristicoBOLD";
-    font-size:20px;
-    letter-spacing: .1vw;
-}
-#LANGUE a{
-    color:var(--n);
-    text-decoration: none;
-    transition: ease-in-out .5s;
-}
-#LANGUE a:hover{
-    color:var(--o);
-}
+
 /***MODE***/
 #MODE{
-    color:var(--n);
+    color:var(--bl);
     margin: auto;
     font-family: "HasteristicoBOLD";
     font-size:20px;
     letter-spacing: .1vw;
 }
 #MODE a{
-    color:var(--n);
+    color:var(--bl);
     text-decoration: none;
     transition: ease-in-out .5s;
 }
@@ -185,8 +162,8 @@ nav ul li{
     top: 0;
     left: -100%;
     z-index: 99;
-    background-color: white;
-    background-image: url(images/Illu/Logo\ Spiteful\ Final\ R.png.png);
+    background-color: var(--n);
+    background-image: url(../images/Illu/Logo\ Spiteful\ Final\ R.png.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -207,7 +184,7 @@ nav ul li{
     text-align: center;
 }
 #options div a {
-    color:var(--n);
+    color:var(--bl);
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
@@ -219,14 +196,14 @@ nav ul li{
 
 /***BOUT RETOUR***/
 #boutret{
-    color:var(--n);
+    color:var(--bl);
     margin: auto;
     font-family: "HasteristicoBOLD";
     font-size:20px;
     letter-spacing: .1vw;
 }
 #boutret a{
-    color:var(--n);
+    color:var(--bl);
     text-decoration: none;
     transition: ease-in-out .5s;
 }
@@ -272,10 +249,10 @@ nav ul li{
 .textpres p{
     font-size:24px;
     font-family: 'Cabrion - Light';
-    color:var(--n);
+    color:var(--bl);
 }
 .PC{
-    color:var(--m);
+    color:var(--o);
 }
 .imgpres h1{
     font-family: 'theboldfont';
@@ -324,12 +301,12 @@ nav ul li{
 .scipho .p1{
     font-family: 'HasteristicoBOLD';
     font-size:24px;
-    color:var(--n);
+    color:var(--bl);
 }
 .scipho .p11{
     font-family: 'Hasteristico';
     font-size:20px;
-    color:var(--n);
+    color:var(--bl);
 }
 .sci h1{
     width:10%;
@@ -337,7 +314,7 @@ nav ul li{
     transform: rotate(-90deg);
     font-family:'theboldfont';
     font-size:70px;
-    color:var(--n);
+    color:var(--bl);
     opacity:80%;
     margin-top:-35vh;
     margin-left:19vw;
@@ -351,7 +328,7 @@ nav ul li{
     width:94%;
     height:53%;
     margin-top:35vh;
-    background-color:var(--m);
+    background-color:var(--o);
     margin-left:3%;
 }
 .texts{
@@ -381,13 +358,14 @@ nav ul li{
     font-size:24px;
     margin-top:40vh;
     margin-left:6vw;
+    color:var(--bl);
 }
 .barsci{
     margin-top:22vh;
     margin-left:-28vw;
     width:43.9vw;
     height:0.3vh;
-    background:var(--m);
+    background:var(--o);
 }
 /************** MEDOC *************/
 #medoc .wrapper{
@@ -400,12 +378,12 @@ nav ul li{
 .list{
     width: 30%;
     height: 100vh;
-    background-color:var(--n);
+    background-color:var(--bl);
 }
 #barre{
     width:100%;
     height:.5vh;
-    background-color:var(--n);
+    background-color:var(--bl);
 }
 .medoc-container{
     width: 70%;
@@ -431,7 +409,7 @@ nav ul li{
     transition:.3s ease-in-out;
 }
 .puce:hover{
-    background-color:var(--bl);
+    background-color:var(--n);
     opacity:80%;
 }
 .medocs{
@@ -472,7 +450,7 @@ nav ul li{
     left: 0;
     width: 100%;
     height:100%;
-    background-color: var(--n);
+    background-color: var(--bl);
 }
 .med-open{
     z-index: 3;
@@ -480,7 +458,7 @@ nav ul li{
 .title{
     font-family:"theboldfont";
     font-size:70px;
-    color:var(--bl);
+    color:var(--n);
     padding-top:16vh;
     letter-spacing:.1vw;
 }
@@ -512,14 +490,14 @@ nav ul li{
     padding-top:2vh;
 }
 .pouc, .maladie{
-    color:var(--bl);
+    color:var(--n);
     font-family:"Simple Print";
     font-size:44px;
 }
 .nom{
     font-size:150px;
     font-family:"theboldfont";
-    color:var(--n);
+    color:var(--bl);
     opacity:.85;
     margin-top:-12vh;
 }
@@ -577,6 +555,7 @@ nav ul li{
     font-family: 'theboldfont';
     text-justify:left;
     transition: all 1s;
+    color:white;
 }
 
 .vids{
@@ -597,6 +576,7 @@ nav ul li{
     font-size:55px;
     font-family: 'HasteristicoBOLD';
     letter-spacing: .1vw;
+    color:var(--bl);
 }
 .prob{
     font-size:40px;
@@ -625,6 +605,7 @@ nav ul li{
     min-height:10vh;
     margin-top:2vh;
     font-family:'Cabrion - Light';
+    color:var(--bl);
 }
 #infoanim{
     width:100%;
@@ -639,7 +620,7 @@ nav ul li{
 .na1, .hab1{
     font-family:'Cabrion - Light';
     font-size:15px;
-    color:var(--n);
+    color:var(--bl);
 }
 .TitNH{
     font-family:'theboldfont';
@@ -663,6 +644,7 @@ nav ul li{
 #peptide{
     font-size:12px;
     font-family: 'Cabrion - Light';
+    color:var(--bl);
 }
 .imgdesc{
     min-height:50vh;
@@ -688,7 +670,7 @@ nav ul li{
 #contact #MAP .CC1 p, #contact #FORM .CC2 p{
     font-size: 60px;
     font-family:'theboldfont';
-    color:var(--n);
+    color:var(--bl);
     height:10vh;
     width:40%;
 }
@@ -712,15 +694,16 @@ nav ul li{
 }
 #MAP{
     margin-left: 5vw;  
-    border-top:var(--n) solid 5px; 
+    border-top:var(--bl) solid 5px; 
 }
 #FORM{
     margin-left:8vw;
-    border-bottom:var(--n) solid 5px;
+    border-bottom:var(--bl) solid 5px;
 }
 #cartebox{
     width:60%;
     background-color:var(--n) ;
+    border:solid var(--bl) 2px;
 }
 #carte{
     margin-left:3vw;
@@ -740,6 +723,7 @@ nav ul li{
 #formulaire{
     width:30vw;
     background-color: var(--n);
+    border:solid var(--bl) 2px;
 }
 .border{
     width:80%;
@@ -798,7 +782,7 @@ nav ul li{
 .flash-success{
     font-family: 15px;
     font-family:"Cabrion - Light";
-    color:var(--n);
+    color:var(--bl);
 }
 .flash-error{
     font-family: 15px;
@@ -810,7 +794,7 @@ nav ul li{
     border:none;
     font-size:16px;
     font-family:"Cabrion - Light";
-    color:var(--bl);
+    color:var(--o);
     margin-top:2vh;
     margin-left:1vw;
     margin-bottom:2vh;
@@ -831,12 +815,12 @@ footer{
 footer p{
     font-family: 'Cabrion - Light';
     font-size:14px;
-    color:var(--n);
+    color:var(--bl);
     margin-left:2vw;
     margin-top:2vh;
 }
 footer p a{
-    color:var(--n);
+    color:var(--bl);
     text-decoration: none;
 }
 footer p a:hover{
@@ -848,8 +832,8 @@ footer p a:hover{
 #cookie{
     width: 100%;
     height: 8vh;
-    background-color:var(--n);
-    color: white;
+    background-color:var(--bl);
+    color: var(--n);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -881,7 +865,7 @@ footer p a:hover{
     font-size:15px;
     display: block;
     padding: 5px;
-    color:white;
+    color:var(--n);
     text-decoration: none;
     transition: all ease-in-out 1s;
 }
@@ -907,7 +891,7 @@ footer p a:hover{
 }
 #cookies h1{
     font-size:50px;
-    color:#2D2A2A;
+    color:var(--bl);
 }
 #cookies h1, h2, h3{
     font-family: "theboldfont";
@@ -923,7 +907,7 @@ footer p a:hover{
 }
 #cookies p{
     font-family: "Cabrion - Light";
-    color:#2D2A2A;
+    color:var(--bl);
     margin-bottom:1vh;
     margin-left:3vw;
 }

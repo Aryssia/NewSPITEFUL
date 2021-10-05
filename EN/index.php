@@ -11,6 +11,11 @@
         }
         header("LOCATION:index.php");
     }
+
+    if(isset($_GET['cookie'])){
+        setcookie('legal','accept', time() + 365*24*3600, null, null, false, true);
+        header("LOCATION:index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,23 +28,23 @@
      {
         if($_COOKIE['mode']=='sombre')
         {
-            echo"<link rel='stylesheet' type='text/css' href='style2.css'>"; 
+            echo"<link rel='stylesheet' type='text/css' href='style4.css'>"; 
         }
         else{
-            echo"<link rel='stylesheet' type='text/css' href='style1.css'>";
+            echo"<link rel='stylesheet' type='text/css' href='style3.css'>";
         }
      }
      else
      {
-        echo"<link rel='stylesheet' type='text/css' href='style1.css'>";
+        echo"<link rel='stylesheet' type='text/css' href='style3.css'>";
      }
     ?>
-    <link rel="icon" href="images/Illu/logo_final.png"/>
+    <link rel="icon" href="../images/Illu/logo_final.png"/>
     <title>Spiteful</title>
 </head>
 <body>
     <nav id="Menunav">
-        <div id="logomenu"><a href="index.php/#home"></a></div>
+        <div id="logomenu"><a href="../index.php/#home"></a></div>
        
         <ul>
             <li>
@@ -75,7 +80,7 @@
    
     <div class="slide" id="home">
      <div class="video-fond">
-         <video src="../videos/PresSPITEFULen.mp4" autoplay muted loop></video>
+         <video src="../videos//PresSPITEFULfr.mp4" autoplay muted loop></video>
      </div>
     </div>
     <div class="slide" id="pres">
@@ -93,7 +98,7 @@
 
             <div id="imgpres">
                 <div class="imgpres">
-                    <img src="images/PNG/Green_Mamba.png"/>
+                    <img src="../images/PNG/GreenMamba.png"/>
                     <h1>VENOM</h1>
                 </div>
             </div>
@@ -105,13 +110,13 @@
             <div id="sci">
                 <div class="sci">
                     <?php
-                    $reqsci=$bdd->query("SELECT * FROM sci");
+                    $reqsci=$bdd->query("SELECT * FROM scien");
                     while($donsci=$reqsci->fetch()){
                         echo'
                             <div class="scipho">
-                                <img src="images/Illu/sci.png">
-                                <p class="p1">'.$donsci["prenomsci"].'</p>
-                                <p class="p11">'.$donsci["nomsci"].'</p>
+                                <img src="../images/Illu/sci.png">
+                                <p class="p1">'.$donsci["namesci"].'</p>
+                                <p class="p11">'.$donsci["surnamesci"].'</p>
                             </div>
                             <h1>Naturaliste</h1>
                         ';
@@ -124,12 +129,12 @@
                 <div class="textsci">
 
                     <?php
-                        $reqtext=$bdd->query("SELECT * FROM sci");
+                        $reqtext=$bdd->query("SELECT * FROM scien");
                         while($dontext=$reqtext->fetch()){
                             echo'
                                 <div id="texts">
                                     <div class="texts">
-                                     <p>'.$dontext['textsci'].'</>
+                                     <p>'.$dontext['textscien'].'</>
                                     </div>
                                     <div class="barsci"></div>
                                 </div>
@@ -143,9 +148,9 @@
 
 
             <div id="texthist">
-                <div class='texthist'><p>The first studies on animal venoms were not
-                as recent as you think. Since the 18s, different scientists
-                are interested in it.             
+                <div class='texthist'><p>Early studies on animal venom are not
+                as recent as we think. Since the 18th, different scientists
+                They were interested in it.              
                 </p>
                 </div>  
             </div>
@@ -158,20 +163,20 @@
             <div class="list">
                 <div id="medoc-info">
                     <?php
-                        $medocs = $bdd->query('SELECT * FROM medocs');
+                        $medocs = $bdd->query('SELECT * FROM medicine');
                         while($donMed = $medocs->fetch())
                         {
                             echo "<div id='med-info-".$donMed['id']."'class='med-info'>";
-                            echo "<div class='title'>".$donMed['nomedoc']."</div>";
+                            echo "<div class='title'>".$donMed['nammedi']."</div>";
                             
                                 echo "<div class='blocinfo'>";
                                     echo "<div id='num'>";
-                                        echo "<div class='num'>".$donMed['numero']."</div>";
+                                        echo "<div class='num'>".$donMed['number']."</div>";
                                     echo "</div>";
 
                                     echo "<div id='pm'>";
-                                        echo "<div class='pouc'><p>Pourcentage:   ".$donMed['pourc']."</p></div>";
-                                        echo "<div class='maladie'>".$donMed['maladie']."</div>";
+                                        echo "<div class='pouc'><p>Pourcentage:   ".$donMed['pourcentage']."</p></div>";
+                                        echo "<div class='maladie'>".$donMed['sickness']."</div>";
                                     echo "</div>";
                                 echo "</div>";
 
@@ -182,7 +187,7 @@
                 </div>
                 <div id="puces">
                     <?php 
-                        $medocs = $bdd->query('SELECT * FROM medocs');
+                        $medocs = $bdd->query('SELECT * FROM medicine');
                         while($donMed = $medocs->fetch())
                         {
                             echo "<div class='puce' data-target='#medoc-".$donMed['id']."' data-info='#med-info-".$donMed['id']."'>";
@@ -195,12 +200,12 @@
 
             <div class="medoc-container">
             <?php
-                $medocs = $bdd->query('SELECT * FROM medocs');
+                $medocs = $bdd->query('SELECT * FROM medicine');
                     while($donMed = $medocs->fetch())
                     {
                         echo "<div id='medoc-".$donMed['id']."' class='medocs'>";
-                            echo "<div class='img'><img src='images/PNG/".$donMed['imagemed']."' alt='".$donMed['nomedoc']."'></div>";
-                            echo "<div class='nom'>".$donMed['nomedoc']."</div>";
+                            echo "<div class='img'><img src='../images/PNG/".$donMed['imgmedicine']."' alt='".$donMed['nammedi']."'></div>";
+                            echo "<div class='nom'>".$donMed['nammedi']."</div>";
                         echo "</div>";
                     }
                     $medocs->closeCursor(); 
@@ -212,36 +217,61 @@
 
     <div class="slide" id="video">
         <div class="wrapper">
-                <div class="puce-container" id='pucesimg'>     
-                        <?php
-                            $video = $bdd->query('SELECT * FROM imgvideo');
-                            while($donVid = $video->fetch())
-                            {
-                                echo"<div class='pucesimg' data-target=''>";
-                                    echo"<img src='images/".$donVid['imgvid']."' alt='".$donVid['nom']."'/>";
-                                echo"</div>";
-                            }
-
-                        ?>     
-                </div>
-                    
-                <div class="video-container">
-
-                    <?php
-                    $video = $bdd->query('SELECT * FROM videos');
-                    while($donVid = $video->fetch())
+            <div id="pucevid">
+                <?php
+                    $vids = $bdd->query('SELECT * FROM imgvideo');
+                    while($donVid = $vids->fetch())
                     {
-                        echo"<div id='vid-".$donVid['id']."' class='vids'>";
-                            echo"<div class='video'>";
-                                echo"<video controls>";
-                                    echo"<source src='videos/".$donVid['video']."' alt='".$donVid['nomvid']."'>";
-                                echo"</video>";
-                            echo"</div>";
-                        echo"</div>";
+                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(../images/JPEG/'.$donVid['imgvid'].')">'.$donVid['nom'].'</div>';
                     }
-                    $video->closeCursor();
-                    ?>   
-                </div>               
+                ?>    
+            </div>
+
+            <div class="video-container">
+                <div id="action">
+                    <img src="../images/Illu/Flèche.png">
+                    <p>Cliquer sur les annimaux pour voir les vidéos</p>
+                </div>
+                
+                <?php
+                    $vids = $bdd->query('SELECT * FROM animal');
+                    while($donVid = $vids->fetch())
+                    {
+                        echo'<div id="vid-info-'.$donVid['id'].'" class="vids">';
+                            echo'<div class="nomanim">'.$donVid['namanim_1'].'</div>';
+                            echo'<div class="prob">'.$donVid['problem'].'</div>';
+                            echo'<div class="video">';
+                                echo'<video controls><source src="../videos/'.$donVid['video'].'"/></video>';
+                            echo'</div>';
+                            echo'<div class="desc">'.$donVid['description'].'</div>';
+
+                            echo'<div id="infoanim">';
+                                echo'<div class="animal">';
+                                    echo'<div class="na1"><p class="TitNH">NAME:</p>'.$donVid['namanim_1'].'</div><br/>';
+                                    echo'<div class="na1"><p class="TitNH">SCIENTIFIC NAME:</p>'.$donVid['namanim_2'].'</div>';
+
+                                    echo'<div class="habitat">';
+                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['house_1'].'</div><br/>';
+                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['house_2'].'</div>';
+                                    echo'</div>';
+                                echo'</div>';
+
+                                echo'<div class="malvid">';
+                                    echo'<div class="na1"><p class="TitNP">SICKNESS:</p>'.$donVid['problem'].'</div><br/>';
+                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'</div>';
+                                    echo'<div id="peptide"><p><b>*A peptide is a polymer of amino acids linked together by peptide bonds. There is a huge variety of different peptides.</b></p></div><br/>';
+
+                                    echo'<div class="na1"><p class="TitNP">REMEDY:</p>'.$donVid['remedy'].'</div><br/>';
+                                echo'</div>';
+
+                                echo'<div class="imgdesc"><img src=../images/PNG/'.$donVid['imgdesc'].'></div>';
+                            echo'</div>';
+                                
+                        echo'</div>';
+                    }
+                    $vids->closeCursor();
+                ?>
+            </div>              
         </div>
     </div>
 
@@ -250,14 +280,14 @@
 
             <div id="MAP">
                 
-                <div id="CC1" class="CC1"><p>Map</p></div>
+                <div id="CC1" class="CC1"><p>MAP</p></div>
                 
                 <div id="cartebox">
                     <div id=carte><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1219.560184565722!2d5.564230974713011!3d50.563097899605616!2m3!1f0!2f39.0647406244768!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c0f8276cc1ca37%3A0x66fe1582134563d!2sEyeD%20Pharma%20S.A.!5e1!3m2!1sfr!2sbe!4v1619257307662!5m2!1sfr!2sbe" {min-width="100" min-height="200" style="border:0;" allowfullscreen="" loading="lazy"}></iframe></div>
 
                         <div class="adr"> 
-                            <p>Quartier Hôpital</p><br/>
-                            <p>Avenue Hippocrate 5</p><br/>
+                            <p>Hospital Ward</p><br/>
+                            <p>Hippocrates Avenue 5</p><br/>
                             <p>4000 Liège (Belgium)</p>
                         </div>
                 </div>
@@ -284,7 +314,7 @@
                             <div class="border"><label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"></div><br/>
                             <div class="border"><label class="textform" for="Message">Message:</label></div><br/>
                             <textarea id="mess" name="mess" class="destext"></textarea><br>
-                            <a href="mail.php"><input id="boutenv" type="submit" value="Send"></a>
+                            <a href="mail.php"><input id="boutenv" type="submit" value="Submit"></a>
                         </form>
 
                         
@@ -300,9 +330,31 @@
         </div>
     </div>
 
+    <?php 
+        if(!isset($_COOKIE['legal'])){
+    ?>
+         <div id="cookie">
+            <p>
+                Our website uses cookies to better satisfy you during your visit. Please accept the terms and conditions of our website.<br/>
+
+                Thank you and have a great visit!
+            </p>
+            <div class="boutCook">
+                <div id="TC"><a href="polcookies.php">Terms and conditions</a></div>
+                <div id="ACCEPT"><a href="index.php?cookie=accept">I accept!</a></div>
+            </div>
+        </div>
+
+    <?php
+        }
+    ?>
+
     <footer>
-        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site created as part of a TEI(Travail d'études intégrées) _ EPSE _ Bachelor of Computer Graphics/ This site uses cookies/
-        <a href="../index.php">FR</a></p>
+        <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site created as part of an TEI(Work of integrated studies) _ EPSE _ Bachelor Infographic/ This site uses cookies/
+        <a href="../index.php">FR-</a>
+        <a href="polcookies.php">Terms and conditions</a>
+    
+    </p>
     </footer>
 
     <script>
@@ -366,6 +418,21 @@
             }else{
                 nav.classList.add('nav-scroll')
             }
+        })
+
+        const pucesVid = document.querySelectorAll('.pucesvid')
+        const vids = document.querySelectorAll('.vids')
+        const action = document.querySelector('#action')
+
+        pucesVid.forEach(puce =>{
+            puce.addEventListener('click',()=>{
+                action.style.opacity = 0;
+                vids.forEach(vid=>{
+                    vid.classList.remove('vid-open')
+                })
+                target = document.querySelector(puce.dataset.target)
+                target.classList.add('vid-open')
+            })
         })
 
     </script>

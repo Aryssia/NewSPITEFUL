@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 15, 2021 at 09:34 AM
+-- Generation Time: Sep 25, 2021 at 12:49 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -35,20 +35,22 @@ CREATE TABLE `animaux` (
   `habitat_1` varchar(255) NOT NULL,
   `habitat_2` varchar(255) NOT NULL,
   `peptide` varchar(255) NOT NULL,
-  `probleme` varchar(255) NOT NULL
+  `probleme` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `animaux`
 --
 
-INSERT INTO `animaux` (`id`, `nomanim_1`, `nomanim_2`, `habitat_1`, `habitat_2`, `peptide`, `probleme`) VALUES
-(1, 'Mamba vert', 'Squamates', 'Afrique de l\'Est', '+/- 20m2', 'La mambaquarétine', 'Les polykystoses rénales'),
-(2, 'Chironex Fleckeri', 'Chirodropida', 'Océan Pacifique (Côtes Australiennes)', 'Océan Indien', 'CRISPR-Cas9', 'Problème de Cholestérol'),
-(3, 'Palythoa', 'Zoantharie', 'Amérique', 'Floride', 'Palytoxine', 'Cancer'),
-(4, 'Conus Mage', 'Neogastropoda', 'Océan Pacifique', 'Océan Indien', 'Zicontide', 'Douleurs diverses'),
-(5, 'Mamba Noir', 'Squamates', 'Afrique', '+/-20m2', 'Mambalgine', 'Douleurs diverses'),
-(6, 'Araignée banane', 'Phoneutria nigriventer', 'Amérique du Sud', 'Australie', 'PnPP-19', 'Problèmes érectiles');
+INSERT INTO `animaux` (`id`, `nomanim_1`, `nomanim_2`, `habitat_1`, `habitat_2`, `peptide`, `probleme`, `video`, `description`) VALUES
+(1, 'Mamba vert', 'Squamates', 'Afrique de l\'Est', '+/- 20m2', 'La mambaquarétine', 'Les polykystoses rénales', '', 'SPITEFUL 1'),
+(2, 'Chironex Fleckeri', 'Chirodropida', 'Océan Pacifique (Côtes Australiennes)', 'Océan Indien', 'CRISPR-Cas9', 'Problème de Cholestérol', '', 'SPITEFUL 2'),
+(3, 'Palythoa', 'Zoantharie', 'Amérique', 'Floride', 'Palytoxine', 'Cancer', '', 'SPITEFUL 3\r\n'),
+(4, 'Conus Mage', 'Neogastropoda', 'Océan Pacifique', 'Océan Indien', 'Zicontide', 'Douleurs diverses', '', ''),
+(5, 'Mamba Noir', 'Squamates', 'Afrique', '+/-20m2', 'Mambalgine', 'Douleurs diverses', '', ''),
+(6, 'Araignée banane', 'Phoneutria nigriventer', 'Amérique du Sud', 'Australie', 'PnPP-19', 'Problèmes érectiles', '', '');
 
 -- --------------------------------------------------------
 
@@ -139,43 +141,6 @@ INSERT INTO `medocs` (`id`, `nomedoc`, `numero`, `pourc`, `maladie`, `imagemed`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `photos`
---
-
-CREATE TABLE `photos` (
-  `id` int(11) NOT NULL,
-  `nompho` varchar(255) NOT NULL,
-  `slidepho` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `dossier` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `photos`
---
-
-INSERT INTO `photos` (`id`, `nompho`, `slidepho`, `image`, `dossier`) VALUES
-(9, 'Cuboméduse', 'Slide Produit', 'Chironex_Fleckeri.png', 'PNG'),
-(10, 'Palythoa', 'Slide Produit', 'palyhtoa.png', 'PNG'),
-(11, 'Conus Mage', 'Slide Produit', 'Conus_marmoreus.png', 'PNG'),
-(12, 'Mamba noir', 'Slide Produit', 'Black_Mamba.png', 'PNG'),
-(13, 'Araignée Banane', 'Slide Produit', 'Araignée_banane.png', 'PNG'),
-(14, 'Mamba vert bl', 'Modifier', 'mambavert.png', 'Illu'),
-(15, 'Méduse bl', 'Modifier', 'meduse.png', 'Illu'),
-(16, 'Palythoa bl', 'Modifier', 'paly.png', 'Illu'),
-(17, 'Cone mage bl', 'Modifier', 'Conemage.png', 'Illu'),
-(18, 'Mamba noir bl', 'Modifier', 'Mamban.png', 'Illu'),
-(19, 'Araignée bl', 'Modifier', 'araignee.png', 'Illu'),
-(20, 'Mamba vert n', 'Ajouter', 'mambavertbis.png', 'Illu'),
-(21, 'Méduse n', 'Ajouter', 'medusebis.png', 'Illu'),
-(22, 'Palythoa n', 'Ajouter', 'palybis.png', 'Illu'),
-(23, 'Cone mage n', 'Ajouter', 'conemagebis.png', 'Illu'),
-(24, 'Mamba noir n', 'Ajouter', 'mambanbis.png', 'Illu'),
-(25, 'Araignée n', 'Ajouter', 'araigneebis.png', 'Illu');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sci`
 --
 
@@ -192,21 +157,6 @@ CREATE TABLE `sci` (
 
 INSERT INTO `sci` (`id`, `nomsci`, `prenomsci`, `textsci`) VALUES
 (2, 'Felice Gaspard Ferdinando', 'FONTANA', 'Felice Gaspard Ferdinando Fontana est un physicien et naturaliste italien né le 15 avril 1730 à Pomarolo dans le Tyrol et est décédé le 10 mars 1805 à Florence.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `videos`
---
-
-CREATE TABLE `videos` (
-  `id` int(11) NOT NULL,
-  `nomvid` varchar(255) NOT NULL,
-  `slidevid` varchar(255) NOT NULL,
-  `video` varchar(255) NOT NULL,
-  `dossier` varchar(255) NOT NULL,
-  `poster` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Indexes for dumped tables
@@ -243,21 +193,9 @@ ALTER TABLE `medocs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `photos`
---
-ALTER TABLE `photos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `sci`
 --
 ALTER TABLE `sci`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `videos`
---
-ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -295,22 +233,10 @@ ALTER TABLE `medocs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `photos`
---
-ALTER TABLE `photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
 -- AUTO_INCREMENT for table `sci`
 --
 ALTER TABLE `sci`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `videos`
---
-ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
