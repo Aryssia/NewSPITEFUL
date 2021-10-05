@@ -68,13 +68,19 @@ nav{
     background-color: transparent;
 }
 .nav-scroll .bar{
-    background-color:var(--o);
+    background-color:var(--m);
 }
-.nav-scroll #MODE, .nav-scroll #LANGUE{
-    color:var(--o);
+.nav-scroll #MODE{
+    color:var(--m);
 }
-.nav-scroll #MODE a, .nav-scroll #LANGUE a{
-    color:var(--o);
+.nav-scroll #MODE a{
+    color:var(--m);
+}
+.nav-scroll #LANGUE{
+    color:var(--m);
+}
+.nav-scroll #LANGUE a{
+    color:var(--m);
 }
 .nav-open{
     background-color: transparent;
@@ -84,7 +90,7 @@ nav{
     height: 80px;
     margin-top:1vh;
     margin-left:2vw;
-    background-image: url(images/Illu/Logo\ Spiteful\ Final\ b.png);
+    background-image: url(images/Illu/logo_final.png);
     background-size:contain;
     background-repeat: no-repeat;
 }
@@ -153,7 +159,6 @@ nav ul li{
 #LANGUE a:hover{
     color:var(--o);
 }
-
 /***MODE***/
 #MODE{
     color:var(--bl);
@@ -269,15 +274,15 @@ nav ul li{
     color:var(--bl);
 }
 .PC{
-    color:var(--o);
+    color:var(--m);
 }
 .imgpres h1{
     font-family: 'theboldfont';
-    font-size:300px;
+    font-size:250px;
     color:var(--m);
     opacity:45%;
     margin-left:8vw;
-    margin-top:-32vh;
+    margin-top:-26vh;
     letter-spacing: .1vw;
 }
 .imgpres img{
@@ -314,6 +319,7 @@ nav ul li{
 .scipho p{
     width:70%;
     letter-spacing: .1vw;
+    color:var(--bl);
 }
 .scipho .p1{
     font-family: 'HasteristicoBOLD';
@@ -345,7 +351,7 @@ nav ul li{
     width:94%;
     height:53%;
     margin-top:35vh;
-    background-color:var(--o);
+    background-color:var(--m);
     margin-left:3%;
 }
 .texts{
@@ -382,7 +388,7 @@ nav ul li{
     margin-left:-28vw;
     width:43.9vw;
     height:0.3vh;
-    background:var(--o);
+    background:var(--m);
 }
 /************** MEDOC *************/
 #medoc .wrapper{
@@ -423,6 +429,7 @@ nav ul li{
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    z-index:50;
     transition:.3s ease-in-out;
 }
 .puce:hover{
@@ -572,6 +579,7 @@ nav ul li{
     font-family: 'theboldfont';
     text-justify:left;
     transition: all 1s;
+    letter-spacing: .1s;
     color:white;
 }
 
@@ -593,7 +601,7 @@ nav ul li{
     font-size:55px;
     font-family: 'HasteristicoBOLD';
     letter-spacing: .1vw;
-    color:var(--bl);
+    color:white;
 }
 .prob{
     font-size:40px;
@@ -606,6 +614,7 @@ nav ul li{
     height:40vh;
     margin-top:5vh;
     position: relative;
+    background-color:var(--n);
 }
 .video video{
     width: 100%;
@@ -622,7 +631,7 @@ nav ul li{
     min-height:10vh;
     margin-top:2vh;
     font-family:'Cabrion - Light';
-    color:var(--bl);
+    color:white;
 }
 #infoanim{
     width:100%;
@@ -635,6 +644,7 @@ nav ul li{
     height:10vh;
 }
 .na1, .hab1{
+    width:50%;
     font-family:'Cabrion - Light';
     font-size:15px;
     color:var(--bl);
@@ -643,6 +653,7 @@ nav ul li{
     font-family:'theboldfont';
     font-size:15px;
     color:#BF034D;
+    letter-spacing:.1s;
 }
 .habitat{
     width:100%;
@@ -657,11 +668,12 @@ nav ul li{
     font-family:'theboldfont';
     font-size:15px;
     color:var(--o);
+    letter-spacing:.1s;
 }
 #peptide{
     font-size:12px;
     font-family: 'Cabrion - Light';
-    color:var(--bl);
+    margin-top:1vh;
 }
 .imgdesc{
     min-height:50vh;
@@ -669,8 +681,7 @@ nav ul li{
 }
 .imgdesc img{
     height:20vh;
-    margin-left:7vw;
-    
+    margin-left:7vw;    
 }
 
 /*********** CONTACT ***********/
@@ -708,19 +719,20 @@ nav ul li{
     width:40%;
     margin-top:30vh;
     display:flex;
+    border:solid white .5px;
 }
 #MAP{
     margin-left: 5vw;  
-    border-top:var(--bl) solid 5px; 
+    border-top:var(--n) solid 5px; 
 }
 #FORM{
     margin-left:8vw;
-    border-bottom:var(--bl) solid 5px;
+    border-bottom:var(--n) solid 5px;
+
 }
 #cartebox{
     width:60%;
     background-color:var(--n) ;
-    border:solid var(--bl) 2px;
 }
 #carte{
     margin-left:3vw;
@@ -740,7 +752,6 @@ nav ul li{
 #formulaire{
     width:30vw;
     background-color: var(--n);
-    border:solid var(--bl) 2px;
 }
 .border{
     width:80%;
@@ -799,7 +810,7 @@ nav ul li{
 .flash-success{
     font-family: 15px;
     font-family:"Cabrion - Light";
-    color:var(--bl);
+    color:var(--n);
 }
 .flash-error{
     font-family: 15px;
@@ -811,7 +822,7 @@ nav ul li{
     border:none;
     font-size:16px;
     font-family:"Cabrion - Light";
-    color:var(--o);
+    color:var(--bl);
     margin-top:2vh;
     margin-left:1vw;
     margin-bottom:2vh;
@@ -905,10 +916,11 @@ footer p a:hover{
 }
 #CHARTC p{
     font-size:25px;
+    color:white;
 }
 #cookies h1{
     font-size:50px;
-    color:var(--bl);
+    color:white;
 }
 #cookies h1, h2, h3{
     font-family: "theboldfont";
@@ -924,7 +936,7 @@ footer p a:hover{
 }
 #cookies p{
     font-family: "Cabrion - Light";
-    color:var(--bl);
+    color:white;
     margin-bottom:1vh;
     margin-left:3vw;
 }
@@ -962,4 +974,539 @@ footer p a:hover{
     margin-bottom:5vh;
 }
 
+/***MEDIA QUERIES***/
 
+/******IPAD HOR******/
+@media all AND (max-width: 1024px){
+    .slide{
+        min-height:80vh;
+    }
+    nav ul{
+        margin-right:1vw;
+    }
+    /***HOME***/
+    .video-fond{
+        height:100%;
+    }
+    /***BURGERBOUT***/
+    .bar{
+        width:85%;
+        margin-top:4px;
+    }
+    /***LANGUE***/
+    #LANGUE{
+        font-size:16px;
+    }
+    /***MODE**/
+    #MODE{
+        font-size:16px;
+    }
+    /***BOUT RETOUR***/
+    #boutret{
+        font-size:16px;
+    }
+    /**PRES**/
+    .textpres{
+        height:50vh;
+        margin-top:35vh;
+    }
+    .textpres p{
+        font-size:20px;
+    }
+    .imgpres h1{
+        font-size:170px;
+        margin-top:-20vh;
+    }
+    .imgpres img{
+        margin-top:25vh;
+    }
+    /***HISTORY***/
+    .sci{
+        height:60vh;
+        margin-top:40vh;
+    }
+    .sci h1{
+        font-size:57px;
+
+    }
+    .scipho p{
+        width:100%;
+    }
+    .texts{
+        height:100%;
+        margin:0;
+        padding-top:5vh;
+        padding-left:1.3vw;
+    }
+    .texts p{
+        font-size:15px;
+    }
+    .barsci{
+        margin-top:0;
+    }
+    /***MEDOC***/
+    .medocs{
+        height:100%;
+        margin-top:5vh;
+    }
+    .medocs .img{
+        margin-left:25vw;
+        margin-top:10vh;
+    }
+    .medocs img{
+        width:200px;
+        height:200px;
+    }
+    #medoc-info{
+        height:50%;
+    }
+    .puce{
+        width:16px;
+        height:16px;
+    }
+    .title{
+        font-size:40px;
+    }
+    #pm{
+        width:15vw;
+        margin-top:5vh;
+    }
+    .pouc, .maladie{
+        font-size:38px;
+    }
+    #num{
+        width:15vh;
+        margin-top:8vh;
+        margin-left:-2vw;
+    }
+    .nom{
+        font-size:90px;
+        margin-top:-8vh;
+    }
+    /***VIDEO***/
+    .pucesvid{
+        height:70%;
+        width:7vw;
+        margin-top:20vh;
+    }
+    #action img{
+        width:100px;
+        height:100px;
+        margin-top:73%;
+    }
+    #action p{
+        font-size:20px;
+        top:53%;
+    }
+    .vids{
+        margin-top:-87vh;
+    }
+    .nomanim{
+        font-size:30px;
+    }
+    .prob{
+        font-size:20px;
+    }
+    .video{
+        margin-top:2vh;
+    }
+    .na1, .hab1{
+        font-size:10px;
+    }
+    .desc{
+        font-size:11px;
+    }
+    .TitNH{
+        font-size:11px;
+    }
+    .TitNP{
+        font-size:11px;
+    }
+    #peptide{
+        font-size:9px;
+    }
+    .imgdesc img{
+        margin-left:4vw;
+    }
+    /***CONTACT***/
+    #FORM, #MAP{
+        width:80%;
+        margin-top:3vh;
+        border:none;
+    }
+    #MAP{
+        height:40vh;
+        margin-left: 10vw;
+        margin-top:13vh;  
+    }
+    #FORM{
+        min-height:55vh;
+        margin-left:10vw;
+        margin-top:3vh;
+        margin-bottom:5vh;
+    }
+    #carte{
+        margin-top:4vh;
+        margin-left:8vw;
+    }
+    #contact #MAP .CC1 p, #contact #FORM .CC2 p{
+        font-size:40px;
+    }
+    .CC2 p{
+        margin-top:31vh;
+    }
+    #formulaire{
+        width:50vw;
+        min-height:40vh;
+    }
+    #formulaire form{
+        width:26vw;
+        min-height:10vw;
+        margin-top:5vh;
+        margin-left:12vw;
+    }
+    #formulaire form .destext{
+        height:4vh;
+        width:80%;
+        margin-top:.2vh;
+    }
+    #MAP .adr p{
+        margin-top:-1.5vh;
+        margin-left:4vw;
+    }
+    #FORM .adr2 p{
+        width:10vw;
+        font-size:14px;
+        margin-left:10vw;
+    }
+    .textform{
+        font-size:14px;
+    }
+    #boutenv{
+        margin-top:.4vh;
+        margin-bottom:1vh;
+    }
+    /***FOOTER***/
+    footer{
+        height:8vh;
+    }
+    /***COOKIES PAGE***/
+    #cookies h4{
+        font-size:20px;
+    }
+    .block img{
+        height:8vh;
+    }
+}
+
+/****IPHONE 6/7/8/10 *****/
+@media all AND (max-width: 375px){
+    .slide{
+        min-height:35vh;
+    }
+    /***NAV***/
+    nav ul{
+        width:10%;
+    }
+    .nav-scroll .bar{
+        background-color:var(--o);
+    }
+    .nav-scroll #MODE{
+        color:var(--o);
+    }
+    .nav-scroll #MODE a{
+        color:var(--o);
+    }
+    .nav-scroll #LANGUE{
+        color:var(--o);
+    }
+    .nav-scroll #LANGUE a{
+        color:var(--o);
+    }
+    /***BURGER BOUT***/
+    .bar{
+        width:70%;
+        height:4px;
+        margin-top:4px;
+    }
+    .burger-open .bar:nth-child(1){
+        transform: translate(0px, 9px) rotate(-25deg);
+      }
+    /***MENU***/
+    #options div a {
+        font-size: 12px;
+    }
+    /***HOME***/
+    .video-fond{
+        height: 25vh;
+    }
+    .video-fond{
+        height:25vh;
+    }
+    /***ACCUEIL***/
+    nav{
+        min-height: 3vh;
+    }
+    nav ul{
+        width:50%;
+    }
+    #logomenu{
+        width:10%;
+        height:60px;
+        margin-top:1vh;
+    }
+    .burgerbout{
+        width:30px;
+        height:30px;
+    }
+    .bar{
+        height:3px;
+    }
+    #MODE{
+        font-size:15px;
+    }
+    #options div a{
+        font-size: 20px;
+    }
+    /***SPITEFUL***/
+    #pres{
+        height:38vh;
+    }
+    .textpres{
+        margin-top:10vh;
+        text-align: left;
+    }
+    .textpres p{
+        font-size:11px;
+    }
+    .imgpres img{
+        margin-top:5vh;
+    }
+    .imgpres h1{
+        font-size:60px;
+        margin-top:-8vh;
+    }
+    /***HSITORY***/
+    #history{
+        height:55vh;
+    }
+    #sci{
+        width:100%;
+        height:30vh;
+        margin-top:8vh;
+    }
+    .sci{
+        height:70%;
+        margin-top:5vh;
+    }
+    .sci img{
+        width:50%;
+        height:50%;
+    }
+    .sci h1{
+        margin-left:35vw;
+        font-size:20px;
+        margin-top:-12vh;
+        margin-left:22vw;
+    }
+    .scipho .p1{
+        font-size:10px;
+        font-family: 'HasteristicoBOLD';
+        letter-spacing: .15vw;
+    }
+    .scipho .p11{
+        font-size:10px;
+        font-family: 'HasteristicoBOLD';
+        letter-spacing: .15vw;
+    }
+    .texts{
+        width: 100%;
+        height:100%;
+        padding-top:2vh;
+        padding-left:5vw;
+        text-align: left;
+    }
+    .texts p{
+        font-size:14px;
+    }
+    .textsci{
+        width:100%;
+        height:100%;
+        margin-top:0;
+    }
+    #texts{
+        width:94%;
+        height:100%;
+        margin-top:0vh;
+    }
+    #texthist{
+        width:100%;
+        height:8vh;
+        margin-top:2vh;
+    }
+    .texthist{
+        margin-top:1vh;
+        height:7vh;
+        font-size:12px;
+    }
+    .barsci{
+        margin-top:-.3vh;
+        margin-left:-60vw;
+        width:95.5vw;
+    }
+
+    /***MEDOCS***/
+    #medoc .wrapper{
+        height:90vh;
+    }
+    .list{
+        height:35vh;
+        width:100%;
+        margin-top:8vh;
+    }
+    #barre{
+        display:none;
+    }
+    .medoc-container{
+        height:20vh;
+        width:100%;
+    }
+    #puces{
+        margin-left:25vw;
+        margin-top:-5vh;
+    }
+    .puce{
+        opacity:100%;
+    }
+    .medocs .img{
+        width:300px;
+        height:300px;
+        margin-left:8vw;
+        margin-top:3vh;
+    }
+    #medoc-info{
+        height:100%;
+    }
+    .title{
+        font-size:40px;
+        padding-top:4vh;
+    }
+    #num{
+        margin-top:4.5vh;
+        margin-left:2vw;
+    }
+    #pm{
+        width:50vw;
+        margin-top:2vh;
+        margin-left:-7vw;
+    }
+    .pouc, .maladie{
+        font-size:30px;
+    }
+    .nom{
+        display: none;
+    }
+    /***VIDEO***/
+    #pucevid{
+        height:20vh;
+        width:100%;
+        margin-top:8vh;
+    }
+    .pucesvid{
+        width:100px;
+        height:100px;
+        margin-top:4vh;
+    }
+    .video-container{
+        width:100%;
+        height:65vh;
+    }
+    #action{
+        height:50vh;
+    }
+    #action img{
+        width:80px;
+        height:80px;
+        margin-top:0px;
+        margin-left:35%;
+        transform:rotate(90deg);
+    }
+    #action p{
+        top:34%;
+        text-justify:center;
+        font-size:20px;
+    }
+    .vids{
+        height:50vh;
+        margin-top:-50vh;
+    }
+    .video{
+        height:20vh;
+    }
+    .video video{
+        height:20vh;
+    }
+    .animal, .habitat, .malvid{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .malvid{
+        height:10vh;
+    }
+    #remedy{
+        margin-top:-5vh;
+    }
+    .imgdesc{
+        display:none;
+    }
+    /***CONTACT***/
+    #contact #MAP .CC1 p, #contact #FORM .CC2 p{
+        display:none;
+        width:0%;
+    }
+    #MAP{
+        border-top: 0px;
+    }
+    #FORM{
+        border-bottom:0px;
+    }
+    #cartebox{
+        width:100%;
+    }
+    #formulaire{
+        width:100%;
+    }
+    #carte{
+        margin-left:-2vw;
+    }
+    #formulaire form{
+        min-height:20vh;
+        margin-left:4vw;
+        margin-top:2vh;
+        width:90%;
+        padding-left:6vw;
+    }
+    .adr{
+        margin-left:4vw;
+    }
+    .adr2{
+        margin-left:0vw;
+    }
+    /***FOOTER***/
+    footer{
+        height:12vh;
+        width:90%;
+        text-align: center;
+    }
+    /***COOKIES PAGE***/
+    #cookies h4{
+        font-size:15px;
+    }
+    .block{
+        width:100%;
+    }
+    .block img{
+        width:8vh;
+    }
+}

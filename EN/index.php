@@ -231,7 +231,7 @@
             <div class="video-container">
                 <div id="action">
                     <img src="../images/Illu/Flèche.png">
-                    <p>Cliquer sur les annimaux pour voir les vidéos</p>
+                    <p>Click on the animals to see the videos</p>
                 </div>
                 
                 <?php
@@ -263,7 +263,7 @@
                                     echo'<div id="peptide"><p><b>*A peptide is a polymer of amino acids linked together by peptide bonds. There is a huge variety of different peptides.</b></p></div>';
                                     echo'</div>';
 
-                                    echo'<div class="na1"><p class="TitNP">REMEDY:</p>'.$donVid['remedy'].'</div><br/>';
+                                    echo'<div class="na1" id="remedy"><p class="TitNP">REMEDY:</p>'.$donVid['remedy'].'</div><br/>';
                                 echo'</div>';
 
                                 echo'<div class="imgdesc"><img src=../images/PNG/'.$donVid['imgdesc'].'></div>';

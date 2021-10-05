@@ -231,7 +231,7 @@
             <div class="video-container">
                 <div id="action">
                     <img src="images/Illu/Flèche.png">
-                    <p>Cliquer sur les annimaux pour voir les vidéos</p>
+                    <p>Cliquer sur les animaux pour voir les vidéos</p>
                 </div>
                 
                 <?php
