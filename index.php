@@ -249,20 +249,21 @@
                             echo'<div id="infoanim">';
                                 echo'<div class="animal">';
                                     echo'<div class="na1"><p class="TitNH">NOM:</p>'.$donVid['nomanim_1'].'</div><br/>';
-                                    echo'<div class="na1"><p class="TitNH">NOM SCIENTIFIQUE:</p>'.$donVid['nomanim_2'].'</div>';
+                                    echo'<div class="na1" id="na2"><p class="TitNH">NOM SCIENTIFIQUE:</p>'.$donVid['nomanim_2'].'</div>';
 
                                     echo'<div class="habitat">';
                                         echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['habitat_1'].'</div><br/>';
-                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['habitat_2'].'</div>';
+                                        echo'<div class="hab1" id="hab2"><p class="TitNH">CONTINENT:</p>'.$donVid['habitat_2'].'</div>';
                                     echo'</div>';
                                 echo'</div>';
 
                                 echo'<div class="malvid">';
                                     echo'<div class="na1"><p class="TitNP">MALADIE:</p>'.$donVid['probleme'].'</div><br/>';
-                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'</div>';
-                                    echo'<div id="peptide"><p><b>*Un peptide est un polymère d’acides aminés reliés entre eux par des liaisons peptidiques. Il existe une énorme variété de peptides différents.</b></p></div><br/>';
+                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'';
+                                    echo'<div id="peptide"><p><b>*Un peptide est un polymère d’acides aminés reliés entre eux par des liaisons peptidiques. Il existe une énorme variété de peptides différents.</b></p></div>';
+                                    echo'</div>';
 
-                                    echo'<div class="na1"><p class="TitNP">REMEDE:</p>'.$donVid['remede'].'</div><br/>';
+                                    echo'<div class="na1" id="remedy"><p class="TitNP">REMEDE:</p>'.$donVid['remede'].'</div><br/>';
                                 echo'</div>';
 
                                 echo'<div class="imgdesc"><img src=images/PNG/'.$donVid['imgdesc'].'></div>';

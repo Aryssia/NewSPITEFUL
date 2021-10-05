@@ -249,18 +249,19 @@
                             echo'<div id="infoanim">';
                                 echo'<div class="animal">';
                                     echo'<div class="na1"><p class="TitNH">NAME:</p>'.$donVid['namanim_1'].'</div><br/>';
-                                    echo'<div class="na1"><p class="TitNH">SCIENTIFIC NAME:</p>'.$donVid['namanim_2'].'</div>';
+                                    echo'<div class="na1" id="na2"><p class="TitNH">SCIENTIFIC NAME:</p>'.$donVid['namanim_2'].'</div>';
 
                                     echo'<div class="habitat">';
                                         echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['house_1'].'</div><br/>';
-                                        echo'<div class="hab1"><p class="TitNH">CONTINENT:</p>'.$donVid['house_2'].'</div>';
+                                        echo'<div class="hab1" id="hab2"><p class="TitNH">CONTINENT:</p>'.$donVid['house_2'].'</div>';
                                     echo'</div>';
                                 echo'</div>';
 
                                 echo'<div class="malvid">';
                                     echo'<div class="na1"><p class="TitNP">SICKNESS:</p>'.$donVid['problem'].'</div><br/>';
-                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'</div>';
-                                    echo'<div id="peptide"><p><b>*A peptide is a polymer of amino acids linked together by peptide bonds. There is a huge variety of different peptides.</b></p></div><br/>';
+                                    echo'<div class="na1"><p class="TitNP">PEPTIDE:</p>'.$donVid['peptide'].'';
+                                    echo'<div id="peptide"><p><b>*A peptide is a polymer of amino acids linked together by peptide bonds. There is a huge variety of different peptides.</b></p></div>';
+                                    echo'</div>';
 
                                     echo'<div class="na1"><p class="TitNP">REMEDY:</p>'.$donVid['remedy'].'</div><br/>';
                                 echo'</div>';

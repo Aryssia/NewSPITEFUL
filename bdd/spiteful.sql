@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 25, 2021 at 12:49 PM
+-- Generation Time: Oct 05, 2021 at 06:57 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -36,21 +36,23 @@ CREATE TABLE `animaux` (
   `habitat_2` varchar(255) NOT NULL,
   `peptide` varchar(255) NOT NULL,
   `probleme` varchar(255) NOT NULL,
+  `remede` varchar(255) NOT NULL,
   `video` varchar(255) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `imgdesc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `animaux`
 --
 
-INSERT INTO `animaux` (`id`, `nomanim_1`, `nomanim_2`, `habitat_1`, `habitat_2`, `peptide`, `probleme`, `video`, `description`) VALUES
-(1, 'Mamba vert', 'Squamates', 'Afrique de l\'Est', '+/- 20m2', 'La mambaquarétine', 'Les polykystoses rénales', '', 'SPITEFUL 1'),
-(2, 'Chironex Fleckeri', 'Chirodropida', 'Océan Pacifique (Côtes Australiennes)', 'Océan Indien', 'CRISPR-Cas9', 'Problème de Cholestérol', '', 'SPITEFUL 2'),
-(3, 'Palythoa', 'Zoantharie', 'Amérique', 'Floride', 'Palytoxine', 'Cancer', '', 'SPITEFUL 3\r\n'),
-(4, 'Conus Mage', 'Neogastropoda', 'Océan Pacifique', 'Océan Indien', 'Zicontide', 'Douleurs diverses', '', ''),
-(5, 'Mamba Noir', 'Squamates', 'Afrique', '+/-20m2', 'Mambalgine', 'Douleurs diverses', '', ''),
-(6, 'Araignée banane', 'Phoneutria nigriventer', 'Amérique du Sud', 'Australie', 'PnPP-19', 'Problèmes érectiles', '', '');
+INSERT INTO `animaux` (`id`, `nomanim_1`, `nomanim_2`, `habitat_1`, `habitat_2`, `peptide`, `probleme`, `remede`, `video`, `description`, `imgdesc`) VALUES
+(1, 'Mamba vert', 'Squamates', 'Afrique de l\'Est', '+/- 20m2', 'La mambaquarétine', 'La polykystose rénale', 'Q-Mamba', 'PresSPITEFULen.mp4', 'La Mamba vert est un serpent d\'origine africaine.\r\n\r\nDes chercheurs scientifiques ont trouvés dans son venin un peptide qui pourrait éventuellement aboutir à la création d\'un remède contre la polykystose rénale.\r\n\r\nUn espoir thérapeutique et une avancée extraordinaire dans la science médicinale!', 'GreenMamba.png'),
+(2, 'Chironex Fleckeri', 'Chirodropida', 'Océan Pacifique (Côtes Australiennes)', 'Océan Indien', 'CRISPR-Cas9', 'Problème de Cholestérol', 'Ex-Cura', 'PresSPITEFULfr.mp4', 'La Chironex Fleckeri est l\'une des méduse les plus mortelle au monde.\r\n\r\nPourtant cet animal pourrait apaiser certains maux tels que les problèmes de cholestérol qui ont augmenté ces dernières années.', 'ChironexFleckeri.png'),
+(3, 'Palythoa', 'Zoantharie', 'Amérique', 'Floride', 'Palytoxine', 'Cancer', 'Paly-pharmakon', '', 'Le Palythoa aussi hypnotisant qu\'il soit avec toutes ces branches ondulantes.\r\n\r\nCe petit animal produit une toxine qui d\'après sa composition, nous pourrions créer un remède contre la cancer.', 'palyhtoa.png'),
+(4, 'Conus Mage', 'Neogastropoda', 'Océan Pacifique', 'Océan Indien', 'Zicontide', 'Douleurs diverses', 'Conufren', '', 'Ce grand coquillage qu\'on appelle le Cône Mage porte bien son nom.\r\n\r\nMage car grâce à une molécule provenant de son venin, il pourrait faire des miracles!\r\nEffacer les douleurs diverses que notre corps nous fait ressentir.', 'Conusmarmoreus.png'),
+(5, 'Mamba Noir', 'Squamates', 'Afrique', '+/-20m2', 'Mambalgine', 'Douleurs diverses', 'Mambalgine', '', 'Tout comme son cousin le mamba noir est un fournisseur de venin extraordinaire.\r\n\r\nMais il sera mis dans le même domaine que le Cône Mage. Le venin du mamba noir, nous permettra de créer une remède tout comme le Cône Mage; un antidouleur.', 'BlackMamba.png'),
+(6, 'Araignée banane', 'Phoneutria nigriventer', 'Amérique du Sud', 'Australie', 'PnPP-19', 'Problèmes érectiles', 'Ba-Sex', '', 'Cette araignée est surnommée araignée banane pour 2 choses: le fait qu\'elle se cache dans les bouquet de bananes et le fait qu\'elle redonnerai la banane à ces messieurs qui ont du mal à lever la leur!\r\n\r\nLa vie et son hazard des choses!', 'araignee.png');
 
 -- --------------------------------------------------------
 
@@ -84,12 +86,12 @@ CREATE TABLE `imgvideo` (
 --
 
 INSERT INTO `imgvideo` (`id`, `nom`, `imgvid`) VALUES
-(1, 'Green Mamba', 'mambva.jpg'),
-(2, 'Black Mamba', 'Black Mamba.jpg'),
-(3, 'Cuboméduse', 'Méduse.jpg'),
-(4, 'Palythoa', 'Palythoa.jpg'),
-(5, 'Banana Spider', 'Araignée Banane.jpg'),
-(6, 'Conus', 'Conus.jpg');
+(1, 'Mamba vert', 'mambva.jpg'),
+(2, 'Chironex Fleckeri', 'Méduse.jpg'),
+(3, 'Palythoa', 'Palythoa.jpg'),
+(4, 'Cône Mage', 'Conus.jpg'),
+(5, 'Mamba noir', 'BlackMamba.jpg'),
+(6, 'Araignée Banane', 'AraigneeBanane.jpg');
 
 -- --------------------------------------------------------
 
