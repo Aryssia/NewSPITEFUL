@@ -81,7 +81,7 @@
    
     <div class="slide" id="home">
      <div class="video-fond">
-         <video src="videos//PresSPITEFULfr.mp4" autoplay muted loop></video>
+         <video src="videos/PresSPITEFULfr.mp4" autoplay muted loop></video>
      </div>
     </div>
     <div class="slide" id="pres">
@@ -307,7 +307,7 @@
 
                         if(isset($_GET['flash-error']))
                         {
-                            echo'<div class="flash-error">Veuillez correctement remplir le formulaire! </div>';
+                            echo'<div class="flash-error">Formulaire incorrect! </div>';
                         }
 
                     ?>

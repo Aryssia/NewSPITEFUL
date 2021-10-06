@@ -579,7 +579,6 @@ nav ul li{
     transition: all 1s;
     letter-spacing: .1s;
 }
-
 .vids{
     width:100%;
     height:80vh;
@@ -654,6 +653,7 @@ nav ul li{
     width:100%;
     height:9vh;
     margin-top:1vh;
+    z-index:30;
 }
 .malvid{
     width:30%;
@@ -1102,6 +1102,14 @@ footer p a:hover{
     .video{
         margin-top:2vh;
     }
+    #infoanim{
+        margin-top:-2vh;
+    }
+    .animal, .habitat, .malvid{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
     .na1, .hab1{
         font-size:10px;
     }
@@ -1117,8 +1125,18 @@ footer p a:hover{
     #peptide{
         font-size:9px;
     }
+    #remedy{
+        margin-top:-8vh;
+    }
+    .imgdesc{
+        margin-top:-19vh;
+        margin-left:9vw;
+    }
     .imgdesc img{
-        margin-left:4vw;
+        height:15vh;
+        margin-left:2vw;
+        margin-top:-2vh;
+
     }
     /***CONTACT***/
     #FORM, #MAP{
@@ -1144,7 +1162,7 @@ footer p a:hover{
         font-size:40px;
     }
     .CC2 p{
-        margin-top:31vh;
+        margin-top:47vh;
     }
     #formulaire{
         width:50vw;
