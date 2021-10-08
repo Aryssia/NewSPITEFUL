@@ -96,14 +96,7 @@
                     <div class="bar"></div>
                 </div>
             </li>
-            <li id="LANGUE"><a href="">EN</a></li>
-            <li>
-                <div id="MODE">
-                    <a id="mode1" href='admin.php?mode=1'>CLAIR</a>
-                    <span class="tiret">/</span>
-                   <a id="mode2" href='admin.php?mode=2'>SOMBRE</a>
-                </div>
-            </li>
+            <li id="LANGUE"><a href="EN/index.php">EN</a></li>
             <li>
                 <div id="boutret"><a href="index.php">RETOUR</a></div>
             </li>

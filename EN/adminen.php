@@ -98,13 +98,6 @@
             </li>
             <li id="LANGUE"><a href="../index.php">FR</a></li>
             <li>
-                <div id="MODE">
-                    <a id="mode1" href='admin.php?mode=1'>LIGHT</a>
-                    <span class="tiret">/</span>
-                   <a id="mode2" href='admin.php?mode=2'>DARK</a>
-                </div>
-            </li>
-            <li>
                 <div id="boutret"><a href="index.php">BACK</a></div>
             </li>
 

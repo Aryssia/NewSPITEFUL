@@ -31,13 +31,6 @@
         
             <ul>
                 <li>
-                    <div id="MODE">
-                        <a id="mode1" href='polcookies.php?mode=1'>LIGHT</a>
-                        <span class="tiret">-</span>
-                    <a id="mode2" href='polcookies.php?mode=2'>DARK</a>
-                    </div>
-                </li>
-                <li>
                     <div id="boutret"><a href="index.php">BACK</a></div>
                 </li>
             </ul>
