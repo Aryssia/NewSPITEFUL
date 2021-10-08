@@ -22,7 +22,7 @@
      }
     ?>
 
-    <link rel="icon" href="images/Illu/logo_final.png"/>
+    <link rel="icon" href="../images/Illu/logo_final.png"/>
     <title>Cookies Politiques de confidentialités</title>
 </head>
 <body>

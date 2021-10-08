@@ -223,7 +223,7 @@
                     $vids = $bdd->query('SELECT * FROM imgvideo');
                     while($donVid = $vids->fetch())
                     {
-                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(../images/JPEG/'.$donVid['imgvid'].')">'.$donVid['nom'].'</div>';
+                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(../images/JPEG/'.$donVid['imgvid'].')"></div>';
                     }
                 ?>    
             </div>
@@ -302,17 +302,17 @@
                     <?php
                         if(isset($_GET['flash']))
                         {
-                            echo'<div class="flash-success">Merci de votre message! </div>';
+                            echo'<div class="flash-success">Thank you for your message! </div>';
                         }
 
                         if(isset($_GET['flash-error']))
                         {
-                            echo'<div class="flash-error">Veuillez correctement remplir le formulaire! </div>';
+                            echo'<div class="flash-error">Please complete the form correctly! </div>';
                         }
 
                     ?>
-                            <div class="border"><label class="textform" for="Nom">Name:</label> <input type="text" id="name" name="nom" placeholder="Durieu" class="design"></div><br/>
-                            <div class="border"><label class="textform" for="Prenom">Surname:</label> <input type="text" id="surname" name="prenom" placeholder="Marie" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Nom">Name:</label> <input type="text" id="name" name="name" placeholder="Durieu" class="design"></div><br/>
+                            <div class="border"><label class="textform" for="Prenom">SurN:</label> <input type="text" id="surname" name="surname" placeholder="Marie" class="design"></div><br/>
                             <div class="border"><label class="textform" for="E_mail">E-mail:</label> <input type="text" id="mail" name="mail" placeholder="email@gmail.com/.be" class="design"></div><br/>
                             <div class="border"><label class="textform" for="Message">Message:</label></div><br/>
                             <textarea id="mess" name="mess" class="destext"></textarea><br>
@@ -354,7 +354,8 @@
     <footer>
         <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site created as part of an TEI(Work of integrated studies) _ EPSE _ Bachelor Infographic/ This site uses cookies/
         <a href="../index.php">FR-</a>
-        <a href="polcookies.php">Terms and conditions</a>
+        <a href="polcookies.php">Terms and conditions/</a>
+        <a href="adminen.php">Administration</a>
     
     </p>
     </footer>

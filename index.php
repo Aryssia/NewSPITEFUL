@@ -223,7 +223,7 @@
                     $vids = $bdd->query('SELECT * FROM imgvideo');
                     while($donVid = $vids->fetch())
                     {
-                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(images/JPEG/'.$donVid['imgvid'].')">'.$donVid['nom'].'</div>';
+                        echo'<div class="pucesvid" data-target="#vid-info-'.$donVid['id'].'" style="background-image:url(images/JPEG/'.$donVid['imgvid'].')"></div>';
                     }
                 ?>    
             </div>
@@ -353,7 +353,8 @@
     <footer>
         <p>Copyright EPSE/ Web Design & Responsive/ Ainix GD - Site réalisé dans le cadre d'un TEI(Travail d'études intégrées) _ EPSE _ Bachelier Infographie/ Ce site utilise des cookies/
         <a href="EN/index.php">EN-</a>
-        <a href="polcookies.php">Termes et conditions</a>
+        <a href="polcookies.php">Termes et conditions/</a>
+        <a href="admin.php">Administraion</a>
     
     </p>
     </footer>

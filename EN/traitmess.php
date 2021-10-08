@@ -1,23 +1,23 @@
 <?php
     $error=0;
-    if(isset($_POST['nom']))
+    if(isset($_POST['name']))
     {
-        if($_POST['nom']=="")
+        if($_POST['name']=="")
         {
             $error=1;
         }
         else
         {
-            $nom=htmlspecialchars($_POST['nom']);
+            $name=htmlspecialchars($_POST['name']);
         }
 
-        if($_POST['prenom']=="")
+        if($_POST['surname']=="")
         {
             $error=2;
         }
         else
         {
-            $prenom=htmlspecialchars($_POST['prenom']);
+            $surname=htmlspecialchars($_POST['surname']);
         }
 
         if($_POST['mail']=="")
@@ -52,10 +52,10 @@
         if($error==0)
         {
             include("connexion.php");
-            $insert=$bdd->prepare("INSERT INTO contact (nom,prenom,mail,mess,date) VALUE (:nom,:prenom,:mail,:mess,NOW())");
+            $insert=$bdd->prepare("INSERT INTO contact (name,surname,mail,mess,date) VALUE (:name,:surname,:mail,:mess,NOW())");
             $insert->execute(array(
-                ':nom'=>$nom,
-                ':prenom'=>$prenom,
+                ':name'=>$name,
+                ':surname'=>$surname,
                 ':mail'=>$mail,
                 ':mess'=>$mess,
             ));
